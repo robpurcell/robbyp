@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: web | Against A Dark Background...]]></title>
+  <link href="http://robbyp.com/blog/categories/web/atom.xml" rel="self"/>
+  <link href="http://robbyp.com/"/>
+  <updated>2013-07-21T22:08:43+01:00</updated>
+  <id>http://robbyp.com/</id>
+  <author>
+    <name><![CDATA[Rob Purcell]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Notes for a prospective Web developer]]></title>
+    <link href="http://robbyp.com/blog/2013/04/16/notes-for-a-prospective-web-developer/"/>
+    <updated>2013-04-16T19:44:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/04/16/notes-for-a-prospective-web-developer</id>
+    <content type="html"><![CDATA[<p>After a good while, my second blog posting, and the first of the new decade&hellip; Yes, at this rate my third will be in 2025!</p>
+
+<p>Some notes on what I&rsquo;m doing to get my my web application up and running.  Note, I&rsquo;m running this effort in tandem with another blog post on using Vert.x, with the hope that these efforts may come together at some stage&hellip; We shall see.</p>
+
+<h4>TL;DR</h4>
+
+<p>I&rsquo;m going to try and get a Bootstrap site laid out using Grunt and Compass.</p>
+
+<h3>Install Grunt</h3>
+
+<p><code>
+npm install -g grunt-cli
+npm install -g grunt-init
+</code>
+Get the gruntfile template, create Gruntfile.js and package.json
+<code>
+git clone git@github.com:gruntjs/grunt-init-gruntfile.git ~/.grunt-init/gruntfile
+grunt-init gruntfile
+npm init
+</code></p>
+
+<h4>Install grunt-contribs</h4>
+
+<p>Ensure that these are also referenced in Gruntfile.js!
+<code>
+npm install grunt-contrib-compass --save-dev
+npm install grunt-contrib-concat --save-dev
+npm install grunt-contrib-uglify --save-dev
+npm install grunt-contrib-nodeunit --save-dev
+npm install grunt-contrib-jshint --save-dev
+npm install grunt-contrib-watch --save-dev
+npm install grunt-contrib-qunit --save-dev
+</code></p>
+
+<h3>Install Compass</h3>
+
+<p>Make sure Ruby is up to date, and Gems are on the PATH
+<code>
+ruby -v
+brew upgrade ruby (if necessary)
+export PATH=$PATH:/usr/local/opt/ruby/bin
+</code></p>
+
+<h4>Create the SASS folder structure</h4>
+
+<p><code>
+compass create
+</code></p>
+
+<h4>Add compass config to Gruntfile.js</h4>
+
+<p>``` javascript
+grunt.initConfig({
+  compass: {                  // Task</p>
+
+<pre><code>dist: {                   // Target
+  options: {              // Target options
+    sassDir: 'sass',
+    cssDir: 'stylesheets',
+    environment: 'production'
+  }
+},
+dev: {                    // Another target
+  options: {
+    sassDir: 'sass',
+    cssDir: 'stylesheets'
+  }
+}
+</code></pre>
+
+<p>  }
+});
+```
+Make sure that config.rb and Gruntfile.js are consistent!</p>
+
+<h3>Copy the Bootstrap files into place</h3>
+
+<p>Easy enough</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Playing with Vert.x]]></title>
+    <link href="http://robbyp.com/blog/2013/04/16/playing-with-vertx/"/>
+    <updated>2013-04-16T08:09:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/04/16/playing-with-vertx</id>
+    <content type="html"><![CDATA[<p>Today, I&rsquo;m trying to see if I can figure out what Vert.x is.  I&rsquo;m following the tutorial here.</p>
+
+<p>I intalled Vert.x with <a href="http://gvmtool.net/">gvm</a>:
+<code>
+$ gvm install vertx
+$ gvm current vertx
+</code></p>
+
+<h4>Using vertx version 1.3.1.final</h4>
+
+<p>First point to note: <a href="https://github.com/vert-x">Github</a> has changed its url for module downloads, meaning you need to add a parameter to the command line: -repo vert-x.github.io.  I installed the required module manually:
+<code>
+$ vertx install vertx.web-server-v1.0 -repo vert-x.github.io
+</code>
+I also did this for the MongoDB persister (whatever that proves to be):
+<code>
+$ vertx install vertx.mongo-persistor-v1.2.1 -repo vert-x.github.io
+</code>
+I tried to discover how to update the deployModule command in the App.groovy file to take the new repo location, but I couldn&rsquo;t see where the configuration option (JSON) is documented.</p>
+]]></content>
+  </entry>
+  
+</feed>

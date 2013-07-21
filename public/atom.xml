@@ -4,7 +4,7 @@
   <title><![CDATA[Against A Dark Background...]]></title>
   <link href="http://robbyp.com/atom.xml" rel="self"/>
   <link href="http://robbyp.com/"/>
-  <updated>2013-07-19T07:58:16+01:00</updated>
+  <updated>2013-07-21T22:08:43+01:00</updated>
   <id>http://robbyp.com/</id>
   <author>
     <name><![CDATA[Rob Purcell]]></name>
@@ -12,6 +12,166 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A new blog]]></title>
+    <link href="http://robbyp.com/blog/2013/07/21/a-new-blog/"/>
+    <updated>2013-07-21T22:01:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/07/21/a-new-blog</id>
+    <content type="html"><![CDATA[<p>There&rsquo;s a new log in town, and it&rsquo;s mine.  I&rsquo;ve created a new <a href="http://octopress.org">Octopress</a> blog, and I&rsquo;m liking it.  I&rsquo;ve made some notes on what I did to get here, although this information is all available on the web.  The fact that it&rsquo;s so easy is what is appealing to me, now that I&rsquo;ve finally found some time to put it together.  For note, the historical posts (i.e. prior to this one) have been migrated from <a href="http://rob-purcell.blogspot.co.uk">here</a>.  Not that it was much to shout about.</p>
+
+<p>I&rsquo;m going to review and revise the posts over time, as I now have a blog medium that I&rsquo;m happy with (i.e. doesn&rsquo;t look rubbish).  Beware, on the remote possibility that anyone else reads this: it worked for me at the time, YMMV.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Notes for a prospective Web developer]]></title>
+    <link href="http://robbyp.com/blog/2013/04/16/notes-for-a-prospective-web-developer/"/>
+    <updated>2013-04-16T19:44:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/04/16/notes-for-a-prospective-web-developer</id>
+    <content type="html"><![CDATA[<p>After a good while, my second blog posting, and the first of the new decade&hellip; Yes, at this rate my third will be in 2025!</p>
+
+<p>Some notes on what I&rsquo;m doing to get my my web application up and running.  Note, I&rsquo;m running this effort in tandem with another blog post on using Vert.x, with the hope that these efforts may come together at some stage&hellip; We shall see.</p>
+
+<h4>TL;DR</h4>
+
+<p>I&rsquo;m going to try and get a Bootstrap site laid out using Grunt and Compass.</p>
+
+<h3>Install Grunt</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>npm install -g grunt-cli
+</span><span class='line'>npm install -g grunt-init</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Get the gruntfile template, create Gruntfile.js and package.json</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:gruntjs/grunt-init-gruntfile.git ~/.grunt-init/gruntfile
+</span><span class='line'>grunt-init gruntfile
+</span><span class='line'>npm init </span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Install grunt-contribs</h4>
+
+<p>Ensure that these are also referenced in Gruntfile.js!</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>npm install grunt-contrib-compass --save-dev
+</span><span class='line'>npm install grunt-contrib-concat --save-dev
+</span><span class='line'>npm install grunt-contrib-uglify --save-dev
+</span><span class='line'>npm install grunt-contrib-nodeunit --save-dev
+</span><span class='line'>npm install grunt-contrib-jshint --save-dev
+</span><span class='line'>npm install grunt-contrib-watch --save-dev
+</span><span class='line'>npm install grunt-contrib-qunit --save-dev</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Install Compass</h3>
+
+<p>Make sure Ruby is up to date, and Gems are on the PATH</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ruby -v
+</span><span class='line'>brew upgrade ruby (if necessary)
+</span><span class='line'>export PATH=$PATH:/usr/local/opt/ruby/bin</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Create the SASS folder structure</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>compass create</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Add compass config to Gruntfile.js</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+</span><span class='line'>  <span class="nx">compass</span><span class="o">:</span> <span class="p">{</span>                  <span class="c1">// Task</span>
+</span><span class='line'>    <span class="nx">dist</span><span class="o">:</span> <span class="p">{</span>                   <span class="c1">// Target</span>
+</span><span class='line'>      <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>              <span class="c1">// Target options</span>
+</span><span class='line'>        <span class="nx">sassDir</span><span class="o">:</span> <span class="s1">&#39;sass&#39;</span><span class="p">,</span>
+</span><span class='line'>        <span class="nx">cssDir</span><span class="o">:</span> <span class="s1">&#39;stylesheets&#39;</span><span class="p">,</span>
+</span><span class='line'>        <span class="nx">environment</span><span class="o">:</span> <span class="s1">&#39;production&#39;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="nx">dev</span><span class="o">:</span> <span class="p">{</span>                    <span class="c1">// Another target</span>
+</span><span class='line'>      <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">sassDir</span><span class="o">:</span> <span class="s1">&#39;sass&#39;</span><span class="p">,</span>
+</span><span class='line'>        <span class="nx">cssDir</span><span class="o">:</span> <span class="s1">&#39;stylesheets&#39;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Make sure that config.rb and Gruntfile.js are consistent!</p>
+
+<h3>Copy the Bootstrap files into place</h3>
+
+<p>Easy enough</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Playing with Vert.x]]></title>
+    <link href="http://robbyp.com/blog/2013/04/16/playing-with-vertx/"/>
+    <updated>2013-04-16T08:09:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/04/16/playing-with-vertx</id>
+    <content type="html"><![CDATA[<p>Today, I&rsquo;m trying to see if I can figure out what Vert.x is.  I&rsquo;m following the tutorial here.</p>
+
+<p>I intalled Vert.x with <a href="http://gvmtool.net/">gvm</a>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ gvm install vertx
+</span><span class='line'>$ gvm current vertx</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Using vertx version 1.3.1.final</h4>
+
+<p>First point to note: <a href="https://github.com/vert-x">Github</a> has changed its url for module downloads, meaning you need to add a parameter to the command line: -repo vert-x.github.io.  I installed the required module manually:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ vertx install vertx.web-server-v1.0 -repo vert-x.github.io</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I also did this for the MongoDB persister (whatever that proves to be):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ vertx install vertx.mongo-persistor-v1.2.1 -repo vert-x.github.io</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I tried to discover how to update the deployModule command in the App.groovy file to take the new repo location, but I couldn&rsquo;t see where the configuration option (JSON) is documented.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Just in time...]]></title>

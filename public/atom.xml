@@ -4,7 +4,7 @@
   <title><![CDATA[Against A Dark Background...]]></title>
   <link href="http://robbyp.com/atom.xml" rel="self"/>
   <link href="http://robbyp.com/"/>
-  <updated>2013-07-21T22:08:43+01:00</updated>
+  <updated>2013-07-23T08:05:24+01:00</updated>
   <id>http://robbyp.com/</id>
   <author>
     <name><![CDATA[Rob Purcell]]></name>
@@ -12,6 +12,61 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Playing with Vert.x]]></title>
+    <link href="http://robbyp.com/blog/2013/07/23/playing-with-vertx/"/>
+    <updated>2013-07-23T07:16:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/07/23/playing-with-vertx</id>
+    <content type="html"><![CDATA[<p>Today, I&rsquo;m trying to see if I can figure out what Vert.x is.  I&rsquo;m following the installation doc <a href="http://vertx.io/install.html">here</a>.</p>
+
+<p>I intalled Vert.x with <a href="http://gvmtool.net/">gvm</a>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ gvm install vertx
+</span><span class='line'>$ gvm current vertx
+</span><span class='line'>Using vertx version 2.0.0-final</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I created the Hello World example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ vi server.js
+</span><span class='line'>$ vertx run server.js
+</span><span class='line'>Downloading io.vertx~lang-rhino~2.0.0-final. Please wait...
+</span><span class='line'>Downloading 100%
+</span><span class='line'>Module io.vertx~lang-rhino~2.0.0-final successfully installed</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then I started following the <a href="http://vertx.io/manual.html">Main Manual</a></p>
+
+<p>Aside: running Vert.x on Heroku immediately jumped to mind: <a href="http://fbflex.wordpress.com/2012/05/02/running-vert-x-applications-on-heroku/">found this</a></p>
+
+<p>Developing an app using Gradle for build management seemed like the way <a href="http://vertx.io/gradle_dev.html">forward</a></p>
+
+<p>Clone template project locally:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git clone https://github.com/vert-x/vertx-gradle-template.git my-vertx-module
+</span><span class='line'>$ git remote rm origin
+</span><span class='line'>$ git remote add --track master origin git@github.com:robpurcell/verdant.git
+</span><span class='line'>$ git pull
+</span><span class='line'>$ git push origin master</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As per the above, I created the repo on Github and then merged in the cloned template: <a href="http://caiustheory.com/adding-a-remote-to-existing-git-repo">see here</a> for some more details of the way to get remote tracking working properly.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A new blog]]></title>
@@ -137,39 +192,6 @@
 <h3>Copy the Bootstrap files into place</h3>
 
 <p>Easy enough</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Playing with Vert.x]]></title>
-    <link href="http://robbyp.com/blog/2013/04/16/playing-with-vertx/"/>
-    <updated>2013-04-16T08:09:00+01:00</updated>
-    <id>http://robbyp.com/blog/2013/04/16/playing-with-vertx</id>
-    <content type="html"><![CDATA[<p>Today, I&rsquo;m trying to see if I can figure out what Vert.x is.  I&rsquo;m following the tutorial here.</p>
-
-<p>I intalled Vert.x with <a href="http://gvmtool.net/">gvm</a>:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ gvm install vertx
-</span><span class='line'>$ gvm current vertx</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>Using vertx version 1.3.1.final</h4>
-
-<p>First point to note: <a href="https://github.com/vert-x">Github</a> has changed its url for module downloads, meaning you need to add a parameter to the command line: -repo vert-x.github.io.  I installed the required module manually:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ vertx install vertx.web-server-v1.0 -repo vert-x.github.io</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I also did this for the MongoDB persister (whatever that proves to be):</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ vertx install vertx.mongo-persistor-v1.2.1 -repo vert-x.github.io</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I tried to discover how to update the deployModule command in the App.groovy file to take the new repo location, but I couldn&rsquo;t see where the configuration option (JSON) is documented.</p>
 ]]></content>
   </entry>
   

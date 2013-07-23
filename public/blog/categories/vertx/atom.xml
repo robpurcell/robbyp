@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: web, | Against A Dark Background...]]></title>
-  <link href="http://robbyp.com/blog/categories/web/atom.xml" rel="self"/>
+  <title><![CDATA[Category: vertx | Against A Dark Background...]]></title>
+  <link href="http://robbyp.com/blog/categories/vertx/atom.xml" rel="self"/>
   <link href="http://robbyp.com/"/>
   <updated>2013-07-23T08:05:24+01:00</updated>
   <id>http://robbyp.com/</id>

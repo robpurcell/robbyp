@@ -4,7 +4,7 @@
   <title><![CDATA[Against A Dark Background...]]></title>
   <link href="http://robbyp.com/atom.xml" rel="self"/>
   <link href="http://robbyp.com/"/>
-  <updated>2013-07-23T08:05:24+01:00</updated>
+  <updated>2013-07-24T08:45:27+01:00</updated>
   <id>http://robbyp.com/</id>
   <author>
     <name><![CDATA[Rob Purcell]]></name>
@@ -14,7 +14,75 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Playing with Vert.x]]></title>
+    <title type="html"><![CDATA[More on Octopress]]></title>
+    <link href="http://robbyp.com/blog/2013/07/24/more-on-octopress/"/>
+    <updated>2013-07-24T08:11:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/07/24/more-on-octopress</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been blogging with Octopress for a few days now.  The first good sign is that I am actually still doing it after a few days, thus breaking my usual install-fiddle-and-forget cycle.  Here are some notes I made while installed it onto my MacBook Pro.</p>
+
+<h3>tl;dr Install Octopress and deploy to Heroku</h3>
+
+<h4>Installing Ruby</h4>
+
+<p>You need to ensure that the correct version of Ruby is installed.  The approach <a href="http://octopress.org/docs/setup/rbenv/">here</a> works.</p>
+
+<pre><code>$ rbenv install 1.9.3-p194 # seems like the version Octopress wants in the .rbenv-version file
+$ rbenv rehash
+</code></pre>
+
+<h4>Octopress source installation</h4>
+
+<p>You clone the Octopress git repository, and then configure it how you like it.  Very straightforward to get the <a href="http://octopress.org/docs/setup/">source</a>.</p>
+
+<pre><code>$ git clone git://github.com/imathis/octopress.git robbyp
+$ cd robbyp/
+$ ruby --version
+$ gem install bundler
+$ rbenv rehash
+$ bundle install
+</code></pre>
+
+<h4>Moving onto deployment</h4>
+
+<p>Gonna try out <a href="http://octopress.org/docs/deploying/heroku/">Heroku</a>!
+Installed the <a href="https://toolbelt.heroku.com">Heroku Toolbelt</a>, as it seems the preferred approach now.  Octopress install guide is out of date with regard to this.</p>
+
+<pre><code>$ heroku apps:create robbyp
+$ vi .gitignore # remove the public entry
+</code></pre>
+
+<p>Made sure the Heroku version of Ruby is consistent by adding <code>ruby "1.9.3"</code> into <code>Gemfile</code> in the root folder.</p>
+
+<h4>General workflow</h4>
+
+<p>Now that I&rsquo;m setup, the workflow is something like:</p>
+
+<pre><code>$ rake new_post["More on Octopress"]
+$ vi source/_posts/2013-07-24-more-on-octopress.markdown # oh yeah!
+$ rake generate
+$ rake preview
+$ git add .
+$ git commit -m '&lt;Message&gt;'
+$ git push heroku master    
+</code></pre>
+
+<p>The blog posts are written in <a href="http://daringfireball.net/projects/markdown/syntax#link">Markdown</a>, which is nice.</p>
+
+<h4>Wanted Twitter integration</h4>
+
+<p>Seems it was switched off in Octopress recently.  Searched around a bit and found <a href="http://blog.jmac.org/blog/2013/03/30/putting-twitter-back-into-octopress/">this</a>.</p>
+
+<h4>Get the domain alias working</h4>
+
+<pre><code>$ heroku domains:add www.robbyp.com
+</code></pre>
+
+<p>And a few bits of config at <a href="http://joker.com">joker</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Getting started with Vert.x]]></title>
     <link href="http://robbyp.com/blog/2013/07/23/playing-with-vertx/"/>
     <updated>2013-07-23T07:16:00+01:00</updated>
     <id>http://robbyp.com/blog/2013/07/23/playing-with-vertx</id>
@@ -22,27 +90,19 @@
 
 <p>I intalled Vert.x with <a href="http://gvmtool.net/">gvm</a>:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ gvm install vertx
-</span><span class='line'>$ gvm current vertx
-</span><span class='line'>Using vertx version 2.0.0-final</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>$ gvm install vertx
+$ gvm current vertx
+Using vertx version 2.0.0-final
+</code></pre>
 
 <p>I created the Hello World example:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ vi server.js
-</span><span class='line'>$ vertx run server.js
-</span><span class='line'>Downloading io.vertx~lang-rhino~2.0.0-final. Please wait...
-</span><span class='line'>Downloading 100%
-</span><span class='line'>Module io.vertx~lang-rhino~2.0.0-final successfully installed</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>$ vi server.js
+$ vertx run server.js
+Downloading io.vertx~lang-rhino~2.0.0-final. Please wait...
+Downloading 100%
+Module io.vertx~lang-rhino~2.0.0-final successfully installed
+</code></pre>
 
 <p>Then I started following the <a href="http://vertx.io/manual.html">Main Manual</a></p>
 
@@ -52,17 +112,12 @@
 
 <p>Clone template project locally:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git clone https://github.com/vert-x/vertx-gradle-template.git my-vertx-module
-</span><span class='line'>$ git remote rm origin
-</span><span class='line'>$ git remote add --track master origin git@github.com:robpurcell/verdant.git
-</span><span class='line'>$ git pull
-</span><span class='line'>$ git push origin master</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>$ git clone https://github.com/vert-x/vertx-gradle-template.git my-vertx-module
+$ git remote rm origin
+$ git remote add --track master origin git@github.com:robpurcell/verdant.git
+$ git pull
+$ git push origin master
+</code></pre>
 
 <p>As per the above, I created the repo on Github and then merged in the cloned template: <a href="http://caiustheory.com/adding-a-remote-to-existing-git-repo">see here</a> for some more details of the way to get remote tracking working properly.</p>
 ]]></content>
@@ -88,9 +143,7 @@
 
 <p>Some notes on what I&rsquo;m doing to get my my web application up and running.  Note, I&rsquo;m running this effort in tandem with another blog post on using Vert.x, with the hope that these efforts may come together at some stage&hellip; We shall see.</p>
 
-<h4>TL;DR</h4>
-
-<p>I&rsquo;m going to try and get a Bootstrap site laid out using Grunt and Compass.</p>
+<h4>tl;dr I&rsquo;m going to try and get a Bootstrap site laid out using Grunt and Compass.</h4>
 
 <h3>Install Grunt</h3>
 

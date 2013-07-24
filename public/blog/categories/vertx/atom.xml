@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vertx | Against A Dark Background...]]></title>
   <link href="http://robbyp.com/blog/categories/vertx/atom.xml" rel="self"/>
   <link href="http://robbyp.com/"/>
-  <updated>2013-07-23T08:05:24+01:00</updated>
+  <updated>2013-07-24T08:45:27+01:00</updated>
   <id>http://robbyp.com/</id>
   <author>
     <name><![CDATA[Rob Purcell]]></name>
@@ -14,27 +14,27 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Playing with Vert.x]]></title>
+    <title type="html"><![CDATA[Getting started with Vert.x]]></title>
     <link href="http://robbyp.com/blog/2013/07/23/playing-with-vertx/"/>
     <updated>2013-07-23T07:16:00+01:00</updated>
     <id>http://robbyp.com/blog/2013/07/23/playing-with-vertx</id>
     <content type="html"><![CDATA[<p>Today, I&rsquo;m trying to see if I can figure out what Vert.x is.  I&rsquo;m following the installation doc <a href="http://vertx.io/install.html">here</a>.</p>
 
-<p>I intalled Vert.x with <a href="http://gvmtool.net/">gvm</a>:
-<code>
-$ gvm install vertx
+<p>I intalled Vert.x with <a href="http://gvmtool.net/">gvm</a>:</p>
+
+<pre><code>$ gvm install vertx
 $ gvm current vertx
 Using vertx version 2.0.0-final
-</code></p>
+</code></pre>
 
-<p>I created the Hello World example:
-<code>
-$ vi server.js
+<p>I created the Hello World example:</p>
+
+<pre><code>$ vi server.js
 $ vertx run server.js
 Downloading io.vertx~lang-rhino~2.0.0-final. Please wait...
 Downloading 100%
 Module io.vertx~lang-rhino~2.0.0-final successfully installed
-</code></p>
+</code></pre>
 
 <p>Then I started following the <a href="http://vertx.io/manual.html">Main Manual</a></p>
 
@@ -42,15 +42,16 @@ Module io.vertx~lang-rhino~2.0.0-final successfully installed
 
 <p>Developing an app using Gradle for build management seemed like the way <a href="http://vertx.io/gradle_dev.html">forward</a></p>
 
-<p>Clone template project locally:
-<code>
-$ git clone https://github.com/vert-x/vertx-gradle-template.git my-vertx-module
+<p>Clone template project locally:</p>
+
+<pre><code>$ git clone https://github.com/vert-x/vertx-gradle-template.git my-vertx-module
 $ git remote rm origin
 $ git remote add --track master origin git@github.com:robpurcell/verdant.git
 $ git pull
 $ git push origin master
-</code>
-As per the above, I created the repo on Github and then merged in the cloned template: <a href="http://caiustheory.com/adding-a-remote-to-existing-git-repo">see here</a> for some more details of the way to get remote tracking working properly.</p>
+</code></pre>
+
+<p>As per the above, I created the repo on Github and then merged in the cloned template: <a href="http://caiustheory.com/adding-a-remote-to-existing-git-repo">see here</a> for some more details of the way to get remote tracking working properly.</p>
 ]]></content>
   </entry>
   

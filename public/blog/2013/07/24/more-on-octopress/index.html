@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: vertx - Against A Dark Background...</title>
+  <title>More on Octopress - Against A Dark Background...</title>
   <meta name="author" content="Rob Purcell">
 
   
-  <meta name="description" content="Category: vertx">
+  <meta name="description" content="I&rsquo;ve been blogging with Octopress for a few days now. The first good sign is that I am actually still doing it after a few days, thus breaking &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://robbyp.comblog/categories/vertx">
+  <link rel="canonical" href="http://robbyp.com/blog/2013/07/24/more-on-octopress">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Against A Dark Background..." type="application/atom+xml">
@@ -64,36 +64,150 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Vertx</h1>
+    
+      <h1 class="entry-title">More on Octopress</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-24T08:11:00+01:00" pubdate data-updated="true">Jul 24<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>I&rsquo;ve been blogging with Octopress for a few days now.  The first good sign is that I am actually still doing it after a few days, thus breaking my usual install-fiddle-and-forget cycle.  Here are some notes I made while installed it onto my MacBook Pro.</p>
 
-  
-  <h2>2013</h2>
+<h3>tl;dr Install Octopress and deploy to Heroku</h3>
 
-<article>
-  
-<h1><a href="/blog/2013/07/23/playing-with-vertx/">Getting started with Vert.x</a></h1>
-<time datetime="2013-07-23T07:16:00+01:00" pubdate><span class='month'>Jul</span> <span class='day'>23</span> <span class='year'>2013</span></time>
+<h4>Installing Ruby</h4>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/vertx/'>vertx</a>, <a class='category' href='/blog/categories/web/'>web,</a></span>
-</footer>
+<p>You need to ensure that the correct version of Ruby is installed.  The approach <a href="http://octopress.org/docs/setup/rbenv/">here</a> works.</p>
 
+<pre><code>$ rbenv install 1.9.3-p194 # seems like the version Octopress wants in the .rbenv-version file
+$ rbenv rehash
+</code></pre>
 
-</article>
+<h4>Octopress source installation</h4>
 
+<p>You clone the Octopress git repository, and then configure it how you like it.  Very straightforward to get the <a href="http://octopress.org/docs/setup/">source</a>.</p>
+
+<pre><code>$ git clone git://github.com/imathis/octopress.git robbyp
+$ cd robbyp/
+$ ruby --version
+$ gem install bundler
+$ rbenv rehash
+$ bundle install
+</code></pre>
+
+<h4>Moving onto deployment</h4>
+
+<p>Gonna try out <a href="http://octopress.org/docs/deploying/heroku/">Heroku</a>!
+Installed the <a href="https://toolbelt.heroku.com">Heroku Toolbelt</a>, as it seems the preferred approach now.  Octopress install guide is out of date with regard to this.</p>
+
+<pre><code>$ heroku apps:create robbyp
+$ vi .gitignore # remove the public entry
+</code></pre>
+
+<p>Made sure the Heroku version of Ruby is consistent by adding <code>ruby "1.9.3"</code> into <code>Gemfile</code> in the root folder.</p>
+
+<h4>General workflow</h4>
+
+<p>Now that I&rsquo;m setup, the workflow is something like:</p>
+
+<pre><code>$ rake new_post["More on Octopress"]
+$ vi source/_posts/2013-07-24-more-on-octopress.markdown # oh yeah!
+$ rake generate
+$ rake preview
+$ git add .
+$ git commit -m '&lt;Message&gt;'
+$ git push heroku master    
+</code></pre>
+
+<p>The blog posts are written in <a href="http://daringfireball.net/projects/markdown/syntax#link">Markdown</a>, which is nice.</p>
+
+<h4>Wanted Twitter integration</h4>
+
+<p>Seems it was switched off in Octopress recently.  Searched around a bit and found <a href="http://blog.jmac.org/blog/2013/03/30/putting-twitter-back-into-octopress/">this</a>.</p>
+
+<h4>Get the domain alias working</h4>
+
+<pre><code>$ heroku domains:add www.robbyp.com
+</code></pre>
+
+<p>And a few bits of config at <a href="http://joker.com">joker</a></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Rob Purcell</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-24T08:11:00+01:00" pubdate data-updated="true">Jul 24<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/blog/'>blog,</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://robbyp.com/blog/2013/07/24/more-on-octopress/" data-via="" data-counturl="http://robbyp.com/blog/2013/07/24/more-on-octopress/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/07/23/playing-with-vertx/" title="Previous Post: Getting started with Vert.x">&laquo; Getting started with Vert.x</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -178,7 +292,10 @@
       var disqus_shortname = 'robswiki';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://robbyp.com/blog/2013/07/24/more-on-octopress/';
+        var disqus_url = 'http://robbyp.com/blog/2013/07/24/more-on-octopress/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

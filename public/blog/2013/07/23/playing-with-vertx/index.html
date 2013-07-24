@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Playing with Vert.x - Against A Dark Background...</title>
+  <title>Getting started with Vert.x - Against A Dark Background...</title>
   <meta name="author" content="Rob Purcell">
 
   
-  <meta name="description" content="Today, I&rsquo;m trying to see if I can figure out what Vert.x is. I&rsquo;m following the installation doc here. I intalled Vert.x with gvm: 1
-2
-3 &hellip;">
+  <meta name="description" content="Today, I&rsquo;m trying to see if I can figure out what Vert.x is. I&rsquo;m following the installation doc here. I intalled Vert.x with gvm: $ gvm &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Playing With Vert.x</h1>
+      <h1 class="entry-title">Getting Started With Vert.x</h1>
     
     
       <p class="meta">
@@ -97,27 +95,19 @@
 
 <p>I intalled Vert.x with <a href="http://gvmtool.net/">gvm</a>:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ gvm install vertx
-</span><span class='line'>$ gvm current vertx
-</span><span class='line'>Using vertx version 2.0.0-final</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>$ gvm install vertx
+$ gvm current vertx
+Using vertx version 2.0.0-final
+</code></pre>
 
 <p>I created the Hello World example:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ vi server.js
-</span><span class='line'>$ vertx run server.js
-</span><span class='line'>Downloading io.vertx~lang-rhino~2.0.0-final. Please wait...
-</span><span class='line'>Downloading 100%
-</span><span class='line'>Module io.vertx~lang-rhino~2.0.0-final successfully installed</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>$ vi server.js
+$ vertx run server.js
+Downloading io.vertx~lang-rhino~2.0.0-final. Please wait...
+Downloading 100%
+Module io.vertx~lang-rhino~2.0.0-final successfully installed
+</code></pre>
 
 <p>Then I started following the <a href="http://vertx.io/manual.html">Main Manual</a></p>
 
@@ -127,17 +117,12 @@
 
 <p>Clone template project locally:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git clone https://github.com/vert-x/vertx-gradle-template.git my-vertx-module
-</span><span class='line'>$ git remote rm origin
-</span><span class='line'>$ git remote add --track master origin git@github.com:robpurcell/verdant.git
-</span><span class='line'>$ git pull
-</span><span class='line'>$ git push origin master</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>$ git clone https://github.com/vert-x/vertx-gradle-template.git my-vertx-module
+$ git remote rm origin
+$ git remote add --track master origin git@github.com:robpurcell/verdant.git
+$ git pull
+$ git push origin master
+</code></pre>
 
 <p>As per the above, I created the repo on Github and then merged in the cloned template: <a href="http://caiustheory.com/adding-a-remote-to-existing-git-repo">see here</a> for some more details of the way to get remote tracking working properly.</p>
 </div>
@@ -188,6 +173,8 @@
         <a class="basic-alignment left" href="/blog/2013/07/21/a-new-blog/" title="Previous Post: A new blog">&laquo; A new blog</a>
       
       
+        <a class="basic-alignment right" href="/blog/2013/07/24/more-on-octopress/" title="Next Post: More on Octopress">More on Octopress &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -207,7 +194,11 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/07/23/playing-with-vertx/">Playing With Vert.x</a>
+        <a href="/blog/2013/07/24/more-on-octopress/">More on Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/23/playing-with-vertx/">Getting Started With Vert.x</a>
       </li>
     
       <li class="post">

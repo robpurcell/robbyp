@@ -3,7 +3,7 @@ layout: post
 title: "A new blog"
 date: 2013-07-21 22:01
 comments: true
-categories: 
+categories: blog
 ---
 There's a new log in town, and it's mine.  I've created a new [Octopress](http://octopress.org) blog, and I'm liking it.  I've made some notes on what I did to get here, although this information is all available on the web.  The fact that it's so easy is what is appealing to me, now that I've finally found some time to put it together.  For note, the historical posts (i.e. prior to this one) have been migrated from [here](http://rob-purcell.blogspot.co.uk).  Not that it was much to shout about.
 

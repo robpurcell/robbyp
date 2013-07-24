@@ -9,8 +9,7 @@ After a good while, my second blog posting, and the first of the new decade... Y
 
 Some notes on what I'm doing to get my my web application up and running.  Note, I'm running this effort in tandem with another blog post on using Vert.x, with the hope that these efforts may come together at some stage... We shall see.
 
-####TL;DR
-I'm going to try and get a Bootstrap site laid out using Grunt and Compass.
+####tl;dr I'm going to try and get a Bootstrap site laid out using Grunt and Compass.
 
 ### Install Grunt
 ```

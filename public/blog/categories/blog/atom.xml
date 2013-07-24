@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: blog, | Against A Dark Background...]]></title>
+  <link href="http://robbyp.com/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://robbyp.com/"/>
+  <updated>2013-07-24T08:45:27+01:00</updated>
+  <id>http://robbyp.com/</id>
+  <author>
+    <name><![CDATA[Rob Purcell]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[More on Octopress]]></title>
+    <link href="http://robbyp.com/blog/2013/07/24/more-on-octopress/"/>
+    <updated>2013-07-24T08:11:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/07/24/more-on-octopress</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been blogging with Octopress for a few days now.  The first good sign is that I am actually still doing it after a few days, thus breaking my usual install-fiddle-and-forget cycle.  Here are some notes I made while installed it onto my MacBook Pro.</p>
+
+<h3>tl;dr Install Octopress and deploy to Heroku</h3>
+
+<h4>Installing Ruby</h4>
+
+<p>You need to ensure that the correct version of Ruby is installed.  The approach <a href="http://octopress.org/docs/setup/rbenv/">here</a> works.</p>
+
+<pre><code>$ rbenv install 1.9.3-p194 # seems like the version Octopress wants in the .rbenv-version file
+$ rbenv rehash
+</code></pre>
+
+<h4>Octopress source installation</h4>
+
+<p>You clone the Octopress git repository, and then configure it how you like it.  Very straightforward to get the <a href="http://octopress.org/docs/setup/">source</a>.</p>
+
+<pre><code>$ git clone git://github.com/imathis/octopress.git robbyp
+$ cd robbyp/
+$ ruby --version
+$ gem install bundler
+$ rbenv rehash
+$ bundle install
+</code></pre>
+
+<h4>Moving onto deployment</h4>
+
+<p>Gonna try out <a href="http://octopress.org/docs/deploying/heroku/">Heroku</a>!
+Installed the <a href="https://toolbelt.heroku.com">Heroku Toolbelt</a>, as it seems the preferred approach now.  Octopress install guide is out of date with regard to this.</p>
+
+<pre><code>$ heroku apps:create robbyp
+$ vi .gitignore # remove the public entry
+</code></pre>
+
+<p>Made sure the Heroku version of Ruby is consistent by adding <code>ruby "1.9.3"</code> into <code>Gemfile</code> in the root folder.</p>
+
+<h4>General workflow</h4>
+
+<p>Now that I&rsquo;m setup, the workflow is something like:</p>
+
+<pre><code>$ rake new_post["More on Octopress"]
+$ vi source/_posts/2013-07-24-more-on-octopress.markdown # oh yeah!
+$ rake generate
+$ rake preview
+$ git add .
+$ git commit -m '&lt;Message&gt;'
+$ git push heroku master    
+</code></pre>
+
+<p>The blog posts are written in <a href="http://daringfireball.net/projects/markdown/syntax#link">Markdown</a>, which is nice.</p>
+
+<h4>Wanted Twitter integration</h4>
+
+<p>Seems it was switched off in Octopress recently.  Searched around a bit and found <a href="http://blog.jmac.org/blog/2013/03/30/putting-twitter-back-into-octopress/">this</a>.</p>
+
+<h4>Get the domain alias working</h4>
+
+<pre><code>$ heroku domains:add www.robbyp.com
+</code></pre>
+
+<p>And a few bits of config at <a href="http://joker.com">joker</a></p>
+]]></content>
+  </entry>
+  
+</feed>

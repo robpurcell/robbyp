@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Against A Dark Background...]]></title>
   <link href="http://robbyp.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://robbyp.com/"/>
-  <updated>2013-07-24T08:45:27+01:00</updated>
+  <updated>2013-08-05T07:49:21+01:00</updated>
   <id>http://robbyp.com/</id>
   <author>
     <name><![CDATA[Rob Purcell]]></name>
@@ -29,6 +29,9 @@
 <pre><code>$ rbenv install 1.9.3-p194 # seems like the version Octopress wants in the .rbenv-version file
 $ rbenv rehash
 </code></pre>
+
+<!-- more -->
+
 
 <h4>Octopress source installation</h4>
 

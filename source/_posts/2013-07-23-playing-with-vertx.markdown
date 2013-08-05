@@ -3,7 +3,7 @@ layout: post
 title: "Getting started with Vert.x"
 date: 2013-07-23 07:16
 comments: true
-categories: web, vertx
+categories: [web, vertx]
 ---
 Today, I'm trying to see if I can figure out what Vert.x is.  I'm following the installation doc [here](http://vertx.io/install.html).
 
@@ -13,7 +13,7 @@ I intalled Vert.x with [gvm](http://gvmtool.net/):
     $ gvm current vertx
     Using vertx version 2.0.0-final
 
-
+<!-- more -->
 I created the Hello World example:
 
     $ vi server.js

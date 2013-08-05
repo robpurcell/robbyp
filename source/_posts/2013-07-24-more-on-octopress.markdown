@@ -3,7 +3,7 @@ layout: post
 title: "More on Octopress"
 date: 2013-07-24 08:11
 comments: true
-categories: blog, octopress
+categories: [blog, octopress]
 ---
 I've been blogging with Octopress for a few days now.  The first good sign is that I am actually still doing it after a few days, thus breaking my usual install-fiddle-and-forget cycle.  Here are some notes I made while installed it onto my MacBook Pro.
 
@@ -13,7 +13,7 @@ I've been blogging with Octopress for a few days now.  The first good sign is th
 You need to ensure that the correct version of Ruby is installed.  The approach [here](http://octopress.org/docs/setup/rbenv/) works.
     $ rbenv install 1.9.3-p194 # seems like the version Octopress wants in the .rbenv-version file
     $ rbenv rehash
-
+<!-- more -->
 #### Octopress source installation
 You clone the Octopress git repository, and then configure it how you like it.  Very straightforward to get the [source](http://octopress.org/docs/setup/).
     $ git clone git://github.com/imathis/octopress.git robbyp

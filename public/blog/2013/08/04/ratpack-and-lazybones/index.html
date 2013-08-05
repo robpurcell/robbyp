@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Getting started with Vert.x - Against A Dark Background...</title>
+  <title>Ratpack and Lazybones - Against A Dark Background...</title>
   <meta name="author" content="Rob Purcell">
 
   
-  <meta name="description" content="Today, I&rsquo;m trying to see if I can figure out what Vert.x is. I&rsquo;m following the installation doc here. I intalled Vert.x with gvm: $ gvm &hellip;">
+  <meta name="description" content="So previously I started trying to figure out VertX. While I still like the idea of that, I&rsquo;ve detoured into looking at Ratpack as it appeals to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://robbyp.com/blog/2013/07/23/playing-with-vertx">
+  <link rel="canonical" href="http://robbyp.com/blog/2013/08/04/ratpack-and-lazybones">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Against A Dark Background..." type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Getting Started With Vert.x</h1>
+      <h1 class="entry-title">Ratpack and Lazybones</h1>
     
     
       <p class="meta">
@@ -84,50 +84,34 @@
   
 
 
-<time datetime="2013-07-23T07:16:00+01:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
+<time datetime="2013-08-04T15:26:00+01:00" pubdate data-updated="true">Aug 4<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Today, I&rsquo;m trying to see if I can figure out what Vert.x is.  I&rsquo;m following the installation doc <a href="http://vertx.io/install.html">here</a>.</p>
+<div class="entry-content"><p>So <a href="/blog/2013/07/23/playing-with-vertx/">previously</a> I started trying to figure out VertX.  While I still like the idea of that, I&rsquo;ve detoured into looking at <a href="http://www.ratpack-framework.org">Ratpack</a> as it appeals to the old Grails hand in me.  While I&rsquo;m fond of Grails, and looking forward to seeing where it goes, I can&rsquo;t help but feel that the lightweight approach is what I need to start our in my adventure of building a HTML 5 app with AngularJS and Bootstrap.  See <a href="">here</a> for my tentative first steps with the client-side.  Hopefully this will all come together.</p>
 
-<p>I intalled Vert.x with <a href="http://gvmtool.net/">gvm</a>:</p>
+<p>Used <a href="https://github.com/pledbrook/lazybones">Lazybones</a> to create a template project, having setup the Github <a href="https://github.com/robpurcell/grat">repo</a></p>
 
-<pre><code>$ gvm install vertx
-$ gvm current vertx
-Using vertx version 2.0.0-final
+<pre><code>lazybones create ratpack .
 </code></pre>
+
+<p>It sets up a nice, basic project layout.</p>
+
+<p>I needed to add the IDEA plugin to <code>build.gradle</code></p>
+
+<pre><code>apply plugin: 'idea'
+./gradlew idea
+</code></pre>
+
+<p>Next up&hellip; installing Bootstrap and AngularJS!</p>
 
 <!-- more -->
 
 
-<p>I created the Hello World example:</p>
 
-<pre><code>$ vi server.js
-$ vertx run server.js
-Downloading io.vertx~lang-rhino~2.0.0-final. Please wait...
-Downloading 100%
-Module io.vertx~lang-rhino~2.0.0-final successfully installed
-</code></pre>
-
-<p>Then I started following the <a href="http://vertx.io/manual.html">Main Manual</a></p>
-
-<p>Aside: running Vert.x on Heroku immediately jumped to mind: <a href="http://fbflex.wordpress.com/2012/05/02/running-vert-x-applications-on-heroku/">found this</a></p>
-
-<p>Developing an app using Gradle for build management seemed like the way <a href="http://vertx.io/gradle_dev.html">forward</a></p>
-
-<p>Clone template project locally:</p>
-
-<pre><code>$ git clone https://github.com/vert-x/vertx-gradle-template.git my-vertx-module
-$ git remote rm origin
-$ git remote add --track master origin git@github.com:robpurcell/verdant.git
-$ git pull
-$ git push origin master
-</code></pre>
-
-<p>As per the above, I created the repo on Github and then merged in the cloned template: <a href="http://caiustheory.com/adding-a-remote-to-existing-git-repo">see here</a> for some more details of the way to get remote tracking working properly.</p>
 </div>
 
 
@@ -150,21 +134,15 @@ $ git push origin master
   
 
 
-<time datetime="2013-07-23T07:16:00+01:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
+<time datetime="2013-08-04T15:26:00+01:00" pubdate data-updated="true">Aug 4<span>th</span>, 2013</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/vertx/'>vertx</a>, <a class='category' href='/blog/categories/web/'>web</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://robbyp.com/blog/2013/07/23/playing-with-vertx/" data-via="" data-counturl="http://robbyp.com/blog/2013/07/23/playing-with-vertx/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://robbyp.com/blog/2013/08/04/ratpack-and-lazybones/" data-via="" data-counturl="http://robbyp.com/blog/2013/08/04/ratpack-and-lazybones/" >Tweet</a>
   
   
   
@@ -173,10 +151,8 @@ $ git push origin master
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/07/21/a-new-blog/" title="Previous Post: A new blog">&laquo; A new blog</a>
+        <a class="basic-alignment left" href="/blog/2013/07/24/vert-dot-x-with-a-gradle-build/" title="Previous Post: Vert.x with a Gradle build">&laquo; Vert.x with a Gradle build</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/07/24/more-on-octopress/" title="Next Post: More on Octopress">More on Octopress &raquo;</a>
       
     </p>
   </footer>
@@ -272,8 +248,8 @@ $ git push origin master
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://robbyp.com/blog/2013/07/23/playing-with-vertx/';
-        var disqus_url = 'http://robbyp.com/blog/2013/07/23/playing-with-vertx/';
+        var disqus_identifier = 'http://robbyp.com/blog/2013/08/04/ratpack-and-lazybones/';
+        var disqus_url = 'http://robbyp.com/blog/2013/08/04/ratpack-and-lazybones/';
         var disqus_script = 'embed.js';
       
     (function () {

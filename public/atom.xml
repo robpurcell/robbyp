@@ -4,7 +4,7 @@
   <title><![CDATA[Against A Dark Background...]]></title>
   <link href="http://robbyp.com/atom.xml" rel="self"/>
   <link href="http://robbyp.com/"/>
-  <updated>2013-07-24T08:45:27+01:00</updated>
+  <updated>2013-08-05T07:49:21+01:00</updated>
   <id>http://robbyp.com/</id>
   <author>
     <name><![CDATA[Rob Purcell]]></name>
@@ -12,6 +12,64 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ratpack and Lazybones]]></title>
+    <link href="http://robbyp.com/blog/2013/08/04/ratpack-and-lazybones/"/>
+    <updated>2013-08-04T15:26:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/08/04/ratpack-and-lazybones</id>
+    <content type="html"><![CDATA[<p>So <a href="http://robbyp.com/blog/2013/07/23/playing-with-vertx/">previously</a> I started trying to figure out VertX.  While I still like the idea of that, I&rsquo;ve detoured into looking at <a href="http://www.ratpack-framework.org">Ratpack</a> as it appeals to the old Grails hand in me.  While I&rsquo;m fond of Grails, and looking forward to seeing where it goes, I can&rsquo;t help but feel that the lightweight approach is what I need to start our in my adventure of building a HTML 5 app with AngularJS and Bootstrap.  See <a href="">here</a> for my tentative first steps with the client-side.  Hopefully this will all come together.</p>
+
+<p>Used <a href="https://github.com/pledbrook/lazybones">Lazybones</a> to create a template project, having setup the Github <a href="https://github.com/robpurcell/grat">repo</a></p>
+
+<pre><code>lazybones create ratpack .
+</code></pre>
+
+<p>It sets up a nice, basic project layout.</p>
+
+<p>I needed to add the IDEA plugin to <code>build.gradle</code></p>
+
+<pre><code>apply plugin: 'idea'
+./gradlew idea
+</code></pre>
+
+<p>Next up&hellip; installing Bootstrap and AngularJS!</p>
+
+<!-- more -->
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vert.x with a Gradle build]]></title>
+    <link href="http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build/"/>
+    <updated>2013-07-24T18:34:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build</id>
+    <content type="html"><![CDATA[<p>I <a href="http://robbyp.com/blog/2013/07/23/playing-with-vertx/">previously</a> set up Vert.x with a Gradle build.  Now it&rsquo;s time to have a play with it and see what we can do.</p>
+
+<pre><code>$ ./gradlew test
+</code></pre>
+
+<p>A lot of stuff downloads!</p>
+
+<pre><code>./gradlew idea
+</code></pre>
+
+<p>To install the support for IntelliJ.</p>
+
+<p>Moving on to the <a href="http://vertx.io/dev_guide.html">dev guide</a>.</p>
+
+<p>Downloaded the <a href="http://vertx.io/examples.html">examples</a>.  Running the Groovy webapp:</p>
+
+<pre><code>cd vertx-examples/src/modules/groovy/webapp
+vertx runmod io.vertx~example-web-app~1.0
+</code></pre>
+
+<p>As <code>webapp</code> has a <code>mods</code> folder, the vertx command can discover the module and run it.  See <a href="http://vertx.io/mods_manual.html#how-vertx-locates-modules">here</a> for details.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[More on Octopress]]></title>
@@ -29,6 +87,9 @@
 <pre><code>$ rbenv install 1.9.3-p194 # seems like the version Octopress wants in the .rbenv-version file
 $ rbenv rehash
 </code></pre>
+
+<!-- more -->
+
 
 <h4>Octopress source installation</h4>
 
@@ -94,6 +155,9 @@ $ git push heroku master
 $ gvm current vertx
 Using vertx version 2.0.0-final
 </code></pre>
+
+<!-- more -->
+
 
 <p>I created the Hello World example:</p>
 
@@ -161,6 +225,9 @@ $ git push origin master
 </pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:gruntjs/grunt-init-gruntfile.git ~/.grunt-init/gruntfile
 </span><span class='line'>grunt-init gruntfile
 </span><span class='line'>npm init </span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more -->
 
 
 <h4>Install grunt-contribs</h4>

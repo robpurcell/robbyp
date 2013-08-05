@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: blog, | Against A Dark Background...]]></title>
+  <title><![CDATA[Category: blog | Against A Dark Background...]]></title>
   <link href="http://robbyp.com/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://robbyp.com/"/>
-  <updated>2013-07-24T08:45:27+01:00</updated>
+  <updated>2013-08-05T07:49:21+01:00</updated>
   <id>http://robbyp.com/</id>
   <author>
     <name><![CDATA[Rob Purcell]]></name>
@@ -29,6 +29,9 @@
 <pre><code>$ rbenv install 1.9.3-p194 # seems like the version Octopress wants in the .rbenv-version file
 $ rbenv rehash
 </code></pre>
+
+<!-- more -->
+
 
 <h4>Octopress source installation</h4>
 
@@ -78,6 +81,17 @@ $ git push heroku master
 </code></pre>
 
 <p>And a few bits of config at <a href="http://joker.com">joker</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A new blog]]></title>
+    <link href="http://robbyp.com/blog/2013/07/21/a-new-blog/"/>
+    <updated>2013-07-21T22:01:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/07/21/a-new-blog</id>
+    <content type="html"><![CDATA[<p>There&rsquo;s a new log in town, and it&rsquo;s mine.  I&rsquo;ve created a new <a href="http://octopress.org">Octopress</a> blog, and I&rsquo;m liking it.  I&rsquo;ve made some notes on what I did to get here, although this information is all available on the web.  The fact that it&rsquo;s so easy is what is appealing to me, now that I&rsquo;ve finally found some time to put it together.  For note, the historical posts (i.e. prior to this one) have been migrated from <a href="http://rob-purcell.blogspot.co.uk">here</a>.  Not that it was much to shout about.</p>
+
+<p>I&rsquo;m going to review and revise the posts over time, as I now have a blog medium that I&rsquo;m happy with (i.e. doesn&rsquo;t look rubbish).  Beware, on the remote possibility that anyone else reads this: it worked for me at the time, YMMV.</p>
 ]]></content>
   </entry>
   

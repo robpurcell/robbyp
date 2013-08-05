@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vertx | Against A Dark Background...]]></title>
   <link href="http://robbyp.com/blog/categories/vertx/atom.xml" rel="self"/>
   <link href="http://robbyp.com/"/>
-  <updated>2013-07-24T08:45:27+01:00</updated>
+  <updated>2013-08-05T07:49:21+01:00</updated>
   <id>http://robbyp.com/</id>
   <author>
     <name><![CDATA[Rob Purcell]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Vert.x with a Gradle build]]></title>
+    <link href="http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build/"/>
+    <updated>2013-07-24T18:34:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build</id>
+    <content type="html"><![CDATA[<p>I <a href="/blog/2013/07/23/playing-with-vertx/">previously</a> set up Vert.x with a Gradle build.  Now it&rsquo;s time to have a play with it and see what we can do.</p>
+
+<pre><code>$ ./gradlew test
+</code></pre>
+
+<p>A lot of stuff downloads!</p>
+
+<pre><code>./gradlew idea
+</code></pre>
+
+<p>To install the support for IntelliJ.</p>
+
+<p>Moving on to the <a href="http://vertx.io/dev_guide.html">dev guide</a>.</p>
+
+<p>Downloaded the <a href="http://vertx.io/examples.html">examples</a>.  Running the Groovy webapp:</p>
+
+<pre><code>cd vertx-examples/src/modules/groovy/webapp
+vertx runmod io.vertx~example-web-app~1.0
+</code></pre>
+
+<p>As <code>webapp</code> has a <code>mods</code> folder, the vertx command can discover the module and run it.  See <a href="http://vertx.io/mods_manual.html#how-vertx-locates-modules">here</a> for details.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Getting started with Vert.x]]></title>
@@ -26,6 +55,9 @@
 $ gvm current vertx
 Using vertx version 2.0.0-final
 </code></pre>
+
+<!-- more -->
+
 
 <p>I created the Hello World example:</p>
 

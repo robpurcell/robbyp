@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Getting started with Vert.x - Against A Dark Background...</title>
+  <title>Vert.x with a Gradle build - Against A Dark Background...</title>
   <meta name="author" content="Rob Purcell">
 
   
-  <meta name="description" content="Today, I&rsquo;m trying to see if I can figure out what Vert.x is. I&rsquo;m following the installation doc here. I intalled Vert.x with gvm: $ gvm &hellip;">
+  <meta name="description" content="I previously set up Vert.x with a Gradle build. Now it&rsquo;s time to have a play with it and see what we can do. $ ./gradlew test A lot of stuff &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://robbyp.com/blog/2013/07/23/playing-with-vertx">
+  <link rel="canonical" href="http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Against A Dark Background..." type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Getting Started With Vert.x</h1>
+      <h1 class="entry-title">Vert.x With a Gradle Build</h1>
     
     
       <p class="meta">
@@ -84,50 +84,34 @@
   
 
 
-<time datetime="2013-07-23T07:16:00+01:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
+<time datetime="2013-07-24T18:34:00+01:00" pubdate data-updated="true">Jul 24<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Today, I&rsquo;m trying to see if I can figure out what Vert.x is.  I&rsquo;m following the installation doc <a href="http://vertx.io/install.html">here</a>.</p>
+<div class="entry-content"><p>I <a href="/blog/2013/07/23/playing-with-vertx/">previously</a> set up Vert.x with a Gradle build.  Now it&rsquo;s time to have a play with it and see what we can do.</p>
 
-<p>I intalled Vert.x with <a href="http://gvmtool.net/">gvm</a>:</p>
-
-<pre><code>$ gvm install vertx
-$ gvm current vertx
-Using vertx version 2.0.0-final
+<pre><code>$ ./gradlew test
 </code></pre>
 
-<!-- more -->
+<p>A lot of stuff downloads!</p>
 
-
-<p>I created the Hello World example:</p>
-
-<pre><code>$ vi server.js
-$ vertx run server.js
-Downloading io.vertx~lang-rhino~2.0.0-final. Please wait...
-Downloading 100%
-Module io.vertx~lang-rhino~2.0.0-final successfully installed
+<pre><code>./gradlew idea
 </code></pre>
 
-<p>Then I started following the <a href="http://vertx.io/manual.html">Main Manual</a></p>
+<p>To install the support for IntelliJ.</p>
 
-<p>Aside: running Vert.x on Heroku immediately jumped to mind: <a href="http://fbflex.wordpress.com/2012/05/02/running-vert-x-applications-on-heroku/">found this</a></p>
+<p>Moving on to the <a href="http://vertx.io/dev_guide.html">dev guide</a>.</p>
 
-<p>Developing an app using Gradle for build management seemed like the way <a href="http://vertx.io/gradle_dev.html">forward</a></p>
+<p>Downloaded the <a href="http://vertx.io/examples.html">examples</a>.  Running the Groovy webapp:</p>
 
-<p>Clone template project locally:</p>
-
-<pre><code>$ git clone https://github.com/vert-x/vertx-gradle-template.git my-vertx-module
-$ git remote rm origin
-$ git remote add --track master origin git@github.com:robpurcell/verdant.git
-$ git pull
-$ git push origin master
+<pre><code>cd vertx-examples/src/modules/groovy/webapp
+vertx runmod io.vertx~example-web-app~1.0
 </code></pre>
 
-<p>As per the above, I created the repo on Github and then merged in the cloned template: <a href="http://caiustheory.com/adding-a-remote-to-existing-git-repo">see here</a> for some more details of the way to get remote tracking working properly.</p>
+<p>As <code>webapp</code> has a <code>mods</code> folder, the vertx command can discover the module and run it.  See <a href="http://vertx.io/mods_manual.html#how-vertx-locates-modules">here</a> for details.</p>
 </div>
 
 
@@ -150,7 +134,7 @@ $ git push origin master
   
 
 
-<time datetime="2013-07-23T07:16:00+01:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
+<time datetime="2013-07-24T18:34:00+01:00" pubdate data-updated="true">Jul 24<span>th</span>, 2013</time>
       
 
 <span class="categories">
@@ -164,7 +148,7 @@ $ git push origin master
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://robbyp.com/blog/2013/07/23/playing-with-vertx/" data-via="" data-counturl="http://robbyp.com/blog/2013/07/23/playing-with-vertx/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build/" data-via="" data-counturl="http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build/" >Tweet</a>
   
   
   
@@ -173,10 +157,10 @@ $ git push origin master
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/07/21/a-new-blog/" title="Previous Post: A new blog">&laquo; A new blog</a>
+        <a class="basic-alignment left" href="/blog/2013/07/24/more-on-octopress/" title="Previous Post: More on Octopress">&laquo; More on Octopress</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/07/24/more-on-octopress/" title="Next Post: More on Octopress">More on Octopress &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/08/04/ratpack-and-lazybones/" title="Next Post: Ratpack and Lazybones">Ratpack and Lazybones &raquo;</a>
       
     </p>
   </footer>
@@ -272,8 +256,8 @@ $ git push origin master
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://robbyp.com/blog/2013/07/23/playing-with-vertx/';
-        var disqus_url = 'http://robbyp.com/blog/2013/07/23/playing-with-vertx/';
+        var disqus_identifier = 'http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build/';
+        var disqus_url = 'http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -9,7 +9,7 @@
   <meta name="author" content="Rob Purcell">
 
   
-  <meta name="description" content="I&rsquo;ve been blogging with Octopress for a few days now. The first good sign is that I am actually still doing it after a few days, thus breaking &hellip;">
+  <meta name="description" content="So previously I started trying to figure out VertX. While I still like the idea of that, I&rsquo;ve detoured into looking at Ratpack as it appeals to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,6 +71,118 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/08/04/ratpack-and-lazybones/">Ratpack and Lazybones</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-04T15:26:00+01:00" pubdate data-updated="true">Aug 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>So <a href="/blog/2013/07/23/playing-with-vertx/">previously</a> I started trying to figure out VertX.  While I still like the idea of that, I&rsquo;ve detoured into looking at <a href="http://www.ratpack-framework.org">Ratpack</a> as it appeals to the old Grails hand in me.  While I&rsquo;m fond of Grails, and looking forward to seeing where it goes, I can&rsquo;t help but feel that the lightweight approach is what I need to start our in my adventure of building a HTML 5 app with AngularJS and Bootstrap.  See <a href="">here</a> for my tentative first steps with the client-side.  Hopefully this will all come together.</p>
+
+<p>Used <a href="https://github.com/pledbrook/lazybones">Lazybones</a> to create a template project, having setup the Github <a href="https://github.com/robpurcell/grat">repo</a></p>
+
+<pre><code>lazybones create ratpack .
+</code></pre>
+
+<p>It sets up a nice, basic project layout.</p>
+
+<p>I needed to add the IDEA plugin to <code>build.gradle</code></p>
+
+<pre><code>apply plugin: 'idea'
+./gradlew idea
+</code></pre>
+
+<p>Next up&hellip; installing Bootstrap and AngularJS!</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/08/04/ratpack-and-lazybones/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/24/vert-dot-x-with-a-gradle-build/">Vert.x With a Gradle Build</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-24T18:34:00+01:00" pubdate data-updated="true">Jul 24<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I <a href="/blog/2013/07/23/playing-with-vertx/">previously</a> set up Vert.x with a Gradle build.  Now it&rsquo;s time to have a play with it and see what we can do.</p>
+
+<pre><code>$ ./gradlew test
+</code></pre>
+
+<p>A lot of stuff downloads!</p>
+
+<pre><code>./gradlew idea
+</code></pre>
+
+<p>To install the support for IntelliJ.</p>
+
+<p>Moving on to the <a href="http://vertx.io/dev_guide.html">dev guide</a>.</p>
+
+<p>Downloaded the <a href="http://vertx.io/examples.html">examples</a>.  Running the Groovy webapp:</p>
+
+<pre><code>cd vertx-examples/src/modules/groovy/webapp
+vertx runmod io.vertx~example-web-app~1.0
+</code></pre>
+
+<p>As <code>webapp</code> has a <code>mods</code> folder, the vertx command can discover the module and run it.  See <a href="http://vertx.io/mods_manual.html#how-vertx-locates-modules">here</a> for details.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/07/24/more-on-octopress/">More on Octopress</a></h1>
     
     
@@ -106,56 +218,12 @@
 $ rbenv rehash
 </code></pre>
 
-<h4>Octopress source installation</h4>
-
-<p>You clone the Octopress git repository, and then configure it how you like it.  Very straightforward to get the <a href="http://octopress.org/docs/setup/">source</a>.</p>
-
-<pre><code>$ git clone git://github.com/imathis/octopress.git robbyp
-$ cd robbyp/
-$ ruby --version
-$ gem install bundler
-$ rbenv rehash
-$ bundle install
-</code></pre>
-
-<h4>Moving onto deployment</h4>
-
-<p>Gonna try out <a href="http://octopress.org/docs/deploying/heroku/">Heroku</a>!
-Installed the <a href="https://toolbelt.heroku.com">Heroku Toolbelt</a>, as it seems the preferred approach now.  Octopress install guide is out of date with regard to this.</p>
-
-<pre><code>$ heroku apps:create robbyp
-$ vi .gitignore # remove the public entry
-</code></pre>
-
-<p>Made sure the Heroku version of Ruby is consistent by adding <code>ruby "1.9.3"</code> into <code>Gemfile</code> in the root folder.</p>
-
-<h4>General workflow</h4>
-
-<p>Now that I&rsquo;m setup, the workflow is something like:</p>
-
-<pre><code>$ rake new_post["More on Octopress"]
-$ vi source/_posts/2013-07-24-more-on-octopress.markdown # oh yeah!
-$ rake generate
-$ rake preview
-$ git add .
-$ git commit -m '&lt;Message&gt;'
-$ git push heroku master    
-</code></pre>
-
-<p>The blog posts are written in <a href="http://daringfireball.net/projects/markdown/syntax#link">Markdown</a>, which is nice.</p>
-
-<h4>Wanted Twitter integration</h4>
-
-<p>Seems it was switched off in Octopress recently.  Searched around a bit and found <a href="http://blog.jmac.org/blog/2013/03/30/putting-twitter-back-into-octopress/">this</a>.</p>
-
-<h4>Get the domain alias working</h4>
-
-<pre><code>$ heroku domains:add www.robbyp.com
-</code></pre>
-
-<p>And a few bits of config at <a href="http://joker.com">joker</a></p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/07/24/more-on-octopress/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -198,33 +266,12 @@ $ gvm current vertx
 Using vertx version 2.0.0-final
 </code></pre>
 
-<p>I created the Hello World example:</p>
-
-<pre><code>$ vi server.js
-$ vertx run server.js
-Downloading io.vertx~lang-rhino~2.0.0-final. Please wait...
-Downloading 100%
-Module io.vertx~lang-rhino~2.0.0-final successfully installed
-</code></pre>
-
-<p>Then I started following the <a href="http://vertx.io/manual.html">Main Manual</a></p>
-
-<p>Aside: running Vert.x on Heroku immediately jumped to mind: <a href="http://fbflex.wordpress.com/2012/05/02/running-vert-x-applications-on-heroku/">found this</a></p>
-
-<p>Developing an app using Gradle for build management seemed like the way <a href="http://vertx.io/gradle_dev.html">forward</a></p>
-
-<p>Clone template project locally:</p>
-
-<pre><code>$ git clone https://github.com/vert-x/vertx-gradle-template.git my-vertx-module
-$ git remote rm origin
-$ git remote add --track master origin git@github.com:robpurcell/verdant.git
-$ git pull
-$ git push origin master
-</code></pre>
-
-<p>As per the above, I created the repo on Github and then merged in the cloned template: <a href="http://caiustheory.com/adding-a-remote-to-existing-git-repo">see here</a> for some more details of the way to get remote tracking working properly.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/07/23/playing-with-vertx/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -320,90 +367,12 @@ $ git push origin master
 </span><span class='line'>npm init </span></code></pre></td></tr></table></div></figure>
 
 
-<h4>Install grunt-contribs</h4>
-
-<p>Ensure that these are also referenced in Gruntfile.js!</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>npm install grunt-contrib-compass --save-dev
-</span><span class='line'>npm install grunt-contrib-concat --save-dev
-</span><span class='line'>npm install grunt-contrib-uglify --save-dev
-</span><span class='line'>npm install grunt-contrib-nodeunit --save-dev
-</span><span class='line'>npm install grunt-contrib-jshint --save-dev
-</span><span class='line'>npm install grunt-contrib-watch --save-dev
-</span><span class='line'>npm install grunt-contrib-qunit --save-dev</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Install Compass</h3>
-
-<p>Make sure Ruby is up to date, and Gems are on the PATH</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ruby -v
-</span><span class='line'>brew upgrade ruby (if necessary)
-</span><span class='line'>export PATH=$PATH:/usr/local/opt/ruby/bin</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>Create the SASS folder structure</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>compass create</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>Add compass config to Gruntfile.js</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
-</span><span class='line'>  <span class="nx">compass</span><span class="o">:</span> <span class="p">{</span>                  <span class="c1">// Task</span>
-</span><span class='line'>    <span class="nx">dist</span><span class="o">:</span> <span class="p">{</span>                   <span class="c1">// Target</span>
-</span><span class='line'>      <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>              <span class="c1">// Target options</span>
-</span><span class='line'>        <span class="nx">sassDir</span><span class="o">:</span> <span class="s1">&#39;sass&#39;</span><span class="p">,</span>
-</span><span class='line'>        <span class="nx">cssDir</span><span class="o">:</span> <span class="s1">&#39;stylesheets&#39;</span><span class="p">,</span>
-</span><span class='line'>        <span class="nx">environment</span><span class="o">:</span> <span class="s1">&#39;production&#39;</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>    <span class="p">},</span>
-</span><span class='line'>    <span class="nx">dev</span><span class="o">:</span> <span class="p">{</span>                    <span class="c1">// Another target</span>
-</span><span class='line'>      <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
-</span><span class='line'>        <span class="nx">sassDir</span><span class="o">:</span> <span class="s1">&#39;sass&#39;</span><span class="p">,</span>
-</span><span class='line'>        <span class="nx">cssDir</span><span class="o">:</span> <span class="s1">&#39;stylesheets&#39;</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Make sure that config.rb and Gruntfile.js are consistent!</p>
-
-<h3>Copy the Bootstrap files into place</h3>
-
-<p>Easy enough</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/04/16/notes-for-a-prospective-web-developer/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -460,6 +429,14 @@ $ git push origin master
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/04/ratpack-and-lazybones/">Ratpack and Lazybones</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/24/vert-dot-x-with-a-gradle-build/">Vert.x With a Gradle Build</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/07/24/more-on-octopress/">More on Octopress</a>
       </li>
     
@@ -469,14 +446,6 @@ $ git push origin master
     
       <li class="post">
         <a href="/blog/2013/07/21/a-new-blog/">A New Blog</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/16/notes-for-a-prospective-web-developer/">Notes for a Prospective Web Developer</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2009/12/22/just-in-time-dot-dot-dot/">Just in Time&#8230;</a>
       </li>
     
   </ul>

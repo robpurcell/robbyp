@@ -2,7 +2,6 @@
 layout: post
 title: "Notes for a prospective Web developer"
 date: 2013-04-16  19:44
-published: false
 comments: true
 categories: web
 ---

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: python | Against A Dark Background...]]></title>
+  <link href="http://robbyp.com/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://robbyp.com/"/>
+  <updated>2013-08-24T13:38:41+01:00</updated>
+  <id>http://robbyp.com/</id>
+  <author>
+    <name><![CDATA[Rob Purcell]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A Note About Git]]></title>
+    <link href="http://robbyp.com/blog/2013/08/24/a-note-about-git/"/>
+    <updated>2013-08-24T13:00:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/08/24/a-note-about-git</id>
+    <content type="html"><![CDATA[<p>A colleague mentioned the <a href="https://github.com/gregmalcolm/python_koans">Python Koans</a> as a nice set of exercises to do in a spare moment.  I cloned the repo and started having a go.  Then I realised that I should have forked the repo so I could share my progress ;&ndash;)  Here&rsquo;s the steps:</p>
+
+<pre><code>-- Fork on github.com
+-- Clone using Github for Mac
+cd python_koans
+git remote add upstream https://github.com/gregmalcolm/python_koans.git
+</code></pre>
+
+<p>From my original clone:</p>
+
+<pre><code>git add .
+git commit -m 'The files I changed'
+git format-patch origin/master --stdout &gt; my.patch
+</code></pre>
+
+<p>And then back to my new forked repository:</p>
+
+<pre><code>git apply my.patch
+git add .
+git commit -m 'The files I changed'
+git push origin master
+</code></pre>
+
+<p>Ta da!</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[Against A Dark Background...]]></title>
   <link href="http://robbyp.com/atom.xml" rel="self"/>
   <link href="http://robbyp.com/"/>
-  <updated>2013-08-05T07:49:21+01:00</updated>
+  <updated>2013-08-24T13:38:41+01:00</updated>
   <id>http://robbyp.com/</id>
   <author>
     <name><![CDATA[Rob Purcell]]></name>
@@ -14,11 +14,76 @@
 
   
   <entry>
+    <title type="html"><![CDATA[A Note About Git]]></title>
+    <link href="http://robbyp.com/blog/2013/08/24/a-note-about-git/"/>
+    <updated>2013-08-24T13:00:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/08/24/a-note-about-git</id>
+    <content type="html"><![CDATA[<p>A colleague mentioned the <a href="https://github.com/gregmalcolm/python_koans">Python Koans</a> as a nice set of exercises to do in a spare moment.  I cloned the repo and started having a go.  Then I realised that I should have forked the repo so I could share my progress ;&ndash;)  Here&rsquo;s the steps:</p>
+
+<pre><code>-- Fork on github.com
+-- Clone using Github for Mac
+cd python_koans
+git remote add upstream https://github.com/gregmalcolm/python_koans.git
+</code></pre>
+
+<p>From my original clone:</p>
+
+<pre><code>git add .
+git commit -m 'The files I changed'
+git format-patch origin/master --stdout &gt; my.patch
+</code></pre>
+
+<p>And then back to my new forked repository:</p>
+
+<pre><code>git apply my.patch
+git add .
+git commit -m 'The files I changed'
+git push origin master
+</code></pre>
+
+<p>Ta da!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[AngularJS]]></title>
+    <link href="http://robbyp.com/blog/2013/08/16/angularjs/"/>
+    <updated>2013-08-16T07:45:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/08/16/angularjs</id>
+    <content type="html"><![CDATA[<p>Having drawn a breath, and taken a holiday, I now feel like getting back into learning more about AngularJS and how best to structure the application that I&rsquo;ve had in mind for ages.</p>
+
+<p>I found <a href="http://bit.ly/15kYjfx">this</a> nice article that gives a sensible approach for laying out the app.  While searching here, I found another interesting <a href="https://github.com/joshdmiller/ng-boilerplate">link</a> which gives a very nice looking boilerplate layout for AngularJS without all the additional complexity (to me, at the moment) of the Yeoman approach.</p>
+
+<p>I&rsquo;m following the tutorial in the <a href="http://www.manning.com/about/meap">MEAP</a> of <a href="http://www.manning.com/bford/">AngularJS in Action</a>, and storing the code as I go in <a href="https://github.com/robpurcell/angina">Git</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A JavaScript frontend]]></title>
+    <link href="http://robbyp.com/blog/2013/08/16/a-javascript-frontend/"/>
+    <updated>2013-08-16T07:43:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/08/16/a-javascript-frontend</id>
+    <content type="html"><![CDATA[<p><a href="http://robbyp.com/blog/2013/04/16/notes-for-a-prospective-web-developer/">Previously</a> I have toyed with Grunt for the Javascript and CSS workflow.  To keep things moving on, I&rsquo;m going to try out <a href="http://yeoman.io">Yeoman</a> which is based on Grunt.</p>
+
+<p>Following the getting started instructions on the homepage.  As I already have the prerequistes installed, I&rsquo;m jumping right in:</p>
+
+<pre><code>npm install -g yo
+npm install -g generator-webapp
+npm install -g generator-angular
+</code></pre>
+
+<p>Wow, a lot of things are downloaded.</p>
+
+<p>It&rsquo;s at this stage that I&rsquo;ve realised that I&rsquo;ve opened Pandora&rsquo;s box, and really there&rsquo;s too much stuff going on here to fully appreciate how it all fits together.  So I propose (to myself) that I try out a more bespoke <a href="http://robbyp.com/blog/2013/08/16/aangularjs">approach</a> and work towards using the full toolkit at a later stage.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Ratpack and Lazybones]]></title>
     <link href="http://robbyp.com/blog/2013/08/04/ratpack-and-lazybones/"/>
     <updated>2013-08-04T15:26:00+01:00</updated>
     <id>http://robbyp.com/blog/2013/08/04/ratpack-and-lazybones</id>
-    <content type="html"><![CDATA[<p>So <a href="http://robbyp.com/blog/2013/07/23/playing-with-vertx/">previously</a> I started trying to figure out VertX.  While I still like the idea of that, I&rsquo;ve detoured into looking at <a href="http://www.ratpack-framework.org">Ratpack</a> as it appeals to the old Grails hand in me.  While I&rsquo;m fond of Grails, and looking forward to seeing where it goes, I can&rsquo;t help but feel that the lightweight approach is what I need to start our in my adventure of building a HTML 5 app with AngularJS and Bootstrap.  See <a href="">here</a> for my tentative first steps with the client-side.  Hopefully this will all come together.</p>
+    <content type="html"><![CDATA[<p>So <a href="http://robbyp.com/blog/2013/07/23/playing-with-vertx/">previously</a> I started trying to figure out VertX.  While I still like the idea of that, I&rsquo;ve detoured into looking at <a href="http://www.ratpack-framework.org">Ratpack</a> as it appeals to the old Grails hand in me.  While I&rsquo;m fond of Grails, and looking forward to seeing where it goes, I can&rsquo;t help but feel that the lightweight approach is what I need to start our in my adventure of building a HTML 5 app with AngularJS and Bootstrap.  See <a href="http://robbyp.com/blog/2013/04/16/notes-for-a-prospective-web-developer/">here</a> for my tentative first steps with the client-side.  Hopefully this will all come together.</p>
 
 <p>Used <a href="https://github.com/pledbrook/lazybones">Lazybones</a> to create a template project, having setup the Github <a href="https://github.com/robpurcell/grat">repo</a></p>
 
@@ -34,11 +99,6 @@
 </code></pre>
 
 <p>Next up&hellip; installing Bootstrap and AngularJS!</p>
-
-<!-- more -->
-
-
-
 ]]></content>
   </entry>
   

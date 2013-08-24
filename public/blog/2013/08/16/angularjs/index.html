@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Vert.x with a Gradle build - Against A Dark Background...</title>
+  <title>AngularJS - Against A Dark Background...</title>
   <meta name="author" content="Rob Purcell">
 
   
-  <meta name="description" content="I previously set up Vert.x with a Gradle build. Now it&rsquo;s time to have a play with it and see what we can do. $ ./gradlew test A lot of stuff &hellip;">
+  <meta name="description" content="Having drawn a breath, and taken a holiday, I now feel like getting back into learning more about AngularJS and how best to structure the application &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build">
+  <link rel="canonical" href="http://robbyp.com/blog/2013/08/16/angularjs">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Against A Dark Background..." type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Vert.x With a Gradle Build</h1>
+      <h1 class="entry-title">AngularJS</h1>
     
     
       <p class="meta">
@@ -84,34 +84,18 @@
   
 
 
-<time datetime="2013-07-24T18:34:00+01:00" pubdate data-updated="true">Jul 24<span>th</span>, 2013</time>
+<time datetime="2013-08-16T07:45:00+01:00" pubdate data-updated="true">Aug 16<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I <a href="/blog/2013/07/23/playing-with-vertx/">previously</a> set up Vert.x with a Gradle build.  Now it&rsquo;s time to have a play with it and see what we can do.</p>
+<div class="entry-content"><p>Having drawn a breath, and taken a holiday, I now feel like getting back into learning more about AngularJS and how best to structure the application that I&rsquo;ve had in mind for ages.</p>
 
-<pre><code>$ ./gradlew test
-</code></pre>
+<p>I found <a href="http://bit.ly/15kYjfx">this</a> nice article that gives a sensible approach for laying out the app.  While searching here, I found another interesting <a href="https://github.com/joshdmiller/ng-boilerplate">link</a> which gives a very nice looking boilerplate layout for AngularJS without all the additional complexity (to me, at the moment) of the Yeoman approach.</p>
 
-<p>A lot of stuff downloads!</p>
-
-<pre><code>./gradlew idea
-</code></pre>
-
-<p>To install the support for IntelliJ.</p>
-
-<p>Moving on to the <a href="http://vertx.io/dev_guide.html">dev guide</a>.</p>
-
-<p>Downloaded the <a href="http://vertx.io/examples.html">examples</a>.  Running the Groovy webapp:</p>
-
-<pre><code>cd vertx-examples/src/modules/groovy/webapp
-vertx runmod io.vertx~example-web-app~1.0
-</code></pre>
-
-<p>As <code>webapp</code> has a <code>mods</code> folder, the vertx command can discover the module and run it.  See <a href="http://vertx.io/mods_manual.html#how-vertx-locates-modules">here</a> for details.</p>
+<p>I&rsquo;m following the tutorial in the <a href="http://www.manning.com/about/meap">MEAP</a> of <a href="http://www.manning.com/bford/">AngularJS in Action</a>, and storing the code as I go in <a href="https://github.com/robpurcell/angina">Git</a>.</p>
 </div>
 
 
@@ -134,21 +118,15 @@ vertx runmod io.vertx~example-web-app~1.0
   
 
 
-<time datetime="2013-07-24T18:34:00+01:00" pubdate data-updated="true">Jul 24<span>th</span>, 2013</time>
+<time datetime="2013-08-16T07:45:00+01:00" pubdate data-updated="true">Aug 16<span>th</span>, 2013</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/vertx/'>vertx</a>, <a class='category' href='/blog/categories/web/'>web</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build/" data-via="" data-counturl="http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://robbyp.com/blog/2013/08/16/angularjs/" data-via="" data-counturl="http://robbyp.com/blog/2013/08/16/angularjs/" >Tweet</a>
   
   
   
@@ -157,10 +135,10 @@ vertx runmod io.vertx~example-web-app~1.0
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/07/24/more-on-octopress/" title="Previous Post: More on Octopress">&laquo; More on Octopress</a>
+        <a class="basic-alignment left" href="/blog/2013/08/16/a-javascript-frontend/" title="Previous Post: A JavaScript frontend">&laquo; A JavaScript frontend</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/08/04/ratpack-and-lazybones/" title="Next Post: Ratpack and Lazybones">Ratpack and Lazybones &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/08/24/a-note-about-git/" title="Next Post: A Note About Git">A Note About Git &raquo;</a>
       
     </p>
   </footer>
@@ -256,8 +234,8 @@ vertx runmod io.vertx~example-web-app~1.0
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build/';
-        var disqus_url = 'http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build/';
+        var disqus_identifier = 'http://robbyp.com/blog/2013/08/16/angularjs/';
+        var disqus_url = 'http://robbyp.com/blog/2013/08/16/angularjs/';
         var disqus_script = 'embed.js';
       
     (function () {

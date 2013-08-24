@@ -2,7 +2,6 @@
 layout: post
 title: "Vert.x with a Gradle build"
 date: 2013-07-24 18:34
-published: false
 comments: true
 categories: [vertx, web]
 ---

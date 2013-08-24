@@ -9,7 +9,7 @@
   <meta name="author" content="Rob Purcell">
 
   
-  <meta name="description" content="So previously I started trying to figure out VertX. While I still like the idea of that, I&rsquo;ve detoured into looking at Ratpack as it appeals to &hellip;">
+  <meta name="description" content="A colleague mentioned the Python Koans as a nice set of exercises to do in a spare moment. I cloned the repo and started having a go. Then I realised &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,6 +71,152 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/08/24/a-note-about-git/">A Note About Git</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-24T13:00:00+01:00" pubdate data-updated="true">Aug 24<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A colleague mentioned the <a href="https://github.com/gregmalcolm/python_koans">Python Koans</a> as a nice set of exercises to do in a spare moment.  I cloned the repo and started having a go.  Then I realised that I should have forked the repo so I could share my progress ;&ndash;)  Here&rsquo;s the steps:</p>
+
+<pre><code>-- Fork on github.com
+-- Clone using Github for Mac
+cd python_koans
+git remote add upstream https://github.com/gregmalcolm/python_koans.git
+</code></pre>
+
+<p>From my original clone:</p>
+
+<pre><code>git add .
+git commit -m 'The files I changed'
+git format-patch origin/master --stdout &gt; my.patch
+</code></pre>
+
+<p>And then back to my new forked repository:</p>
+
+<pre><code>git apply my.patch
+git add .
+git commit -m 'The files I changed'
+git push origin master
+</code></pre>
+
+<p>Ta da!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/16/angularjs/">AngularJS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-16T07:45:00+01:00" pubdate data-updated="true">Aug 16<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Having drawn a breath, and taken a holiday, I now feel like getting back into learning more about AngularJS and how best to structure the application that I&rsquo;ve had in mind for ages.</p>
+
+<p>I found <a href="http://bit.ly/15kYjfx">this</a> nice article that gives a sensible approach for laying out the app.  While searching here, I found another interesting <a href="https://github.com/joshdmiller/ng-boilerplate">link</a> which gives a very nice looking boilerplate layout for AngularJS without all the additional complexity (to me, at the moment) of the Yeoman approach.</p>
+
+<p>I&rsquo;m following the tutorial in the <a href="http://www.manning.com/about/meap">MEAP</a> of <a href="http://www.manning.com/bford/">AngularJS in Action</a>, and storing the code as I go in <a href="https://github.com/robpurcell/angina">Git</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/16/a-javascript-frontend/">A JavaScript Frontend</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-16T07:43:00+01:00" pubdate data-updated="true">Aug 16<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/blog/2013/04/16/notes-for-a-prospective-web-developer/">Previously</a> I have toyed with Grunt for the Javascript and CSS workflow.  To keep things moving on, I&rsquo;m going to try out <a href="http://yeoman.io">Yeoman</a> which is based on Grunt.</p>
+
+<p>Following the getting started instructions on the homepage.  As I already have the prerequistes installed, I&rsquo;m jumping right in:</p>
+
+<pre><code>npm install -g yo
+npm install -g generator-webapp
+npm install -g generator-angular
+</code></pre>
+
+<p>Wow, a lot of things are downloaded.</p>
+
+<p>It&rsquo;s at this stage that I&rsquo;ve realised that I&rsquo;ve opened Pandora&rsquo;s box, and really there&rsquo;s too much stuff going on here to fully appreciate how it all fits together.  So I propose (to myself) that I try out a more bespoke <a href="/blog/2013/08/16/aangularjs">approach</a> and work towards using the full toolkit at a later stage.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/08/04/ratpack-and-lazybones/">Ratpack and Lazybones</a></h1>
     
     
@@ -94,7 +240,7 @@
   </header>
 
 
-  <div class="entry-content"><p>So <a href="/blog/2013/07/23/playing-with-vertx/">previously</a> I started trying to figure out VertX.  While I still like the idea of that, I&rsquo;ve detoured into looking at <a href="http://www.ratpack-framework.org">Ratpack</a> as it appeals to the old Grails hand in me.  While I&rsquo;m fond of Grails, and looking forward to seeing where it goes, I can&rsquo;t help but feel that the lightweight approach is what I need to start our in my adventure of building a HTML 5 app with AngularJS and Bootstrap.  See <a href="">here</a> for my tentative first steps with the client-side.  Hopefully this will all come together.</p>
+  <div class="entry-content"><p>So <a href="/blog/2013/07/23/playing-with-vertx/">previously</a> I started trying to figure out VertX.  While I still like the idea of that, I&rsquo;ve detoured into looking at <a href="http://www.ratpack-framework.org">Ratpack</a> as it appeals to the old Grails hand in me.  While I&rsquo;m fond of Grails, and looking forward to seeing where it goes, I can&rsquo;t help but feel that the lightweight approach is what I need to start our in my adventure of building a HTML 5 app with AngularJS and Bootstrap.  See <a href="/blog/2013/04/16/notes-for-a-prospective-web-developer/">here</a> for my tentative first steps with the client-side.  Hopefully this will all come together.</p>
 
 <p>Used <a href="https://github.com/pledbrook/lazybones">Lazybones</a> to create a template project, having setup the Github <a href="https://github.com/robpurcell/grat">repo</a></p>
 
@@ -110,13 +256,8 @@
 </code></pre>
 
 <p>Next up&hellip; installing Bootstrap and AngularJS!</p>
-
 </div>
   
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/08/04/ratpack-and-lazybones/">Read on &rarr;</a>
-    </footer>
   
 
 
@@ -429,23 +570,23 @@ Using vertx version 2.0.0-final
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/24/a-note-about-git/">A Note About Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/16/angularjs/">AngularJS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/16/a-javascript-frontend/">A JavaScript Frontend</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/04/ratpack-and-lazybones/">Ratpack and Lazybones</a>
       </li>
     
       <li class="post">
         <a href="/blog/2013/07/24/vert-dot-x-with-a-gradle-build/">Vert.x With a Gradle Build</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/24/more-on-octopress/">More on Octopress</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/23/playing-with-vertx/">Getting Started With Vert.x</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/21/a-new-blog/">A New Blog</a>
       </li>
     
   </ul>

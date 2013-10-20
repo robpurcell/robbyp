@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Against A Dark Background...]]></title>
   <link href="http://robbyp.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://robbyp.com/"/>
-  <updated>2013-08-24T13:38:41+01:00</updated>
+  <updated>2013-10-20T23:24:31+01:00</updated>
   <id>http://robbyp.com/</id>
   <author>
     <name><![CDATA[Rob Purcell]]></name>
@@ -12,6 +12,77 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A quick aside on locale]]></title>
+    <link href="http://robbyp.com/blog/2013/10/20/a-quick-aside-on-locale/"/>
+    <updated>2013-10-20T23:08:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/10/20/a-quick-aside-on-locale</id>
+    <content type="html"><![CDATA[<p>While writing the previous blog post, I decided to use a nice <code>é</code> character.  Why not?  Well it turns out that the markdown/YAML parsing in Octopress doesn&rsquo;t like UTF-8 much.  The solution is in the <a href="https://github.com/imathis/octopress/wiki/FAQ#using-non-ascii-characters-in-your-blog">Internet</a> although the answer there doesn&rsquo;t quite work.</p>
+
+<p>With the help of <a href="http://blog.remibergsma.com/2012/07/10/setting-locales-correctly-on-mac-osx-terminal-application/">this blog</a> I have nice non-ASCII characters in the blog now.  The link refers to the OS X Terminal app, but equally applies to iTerm2 that I use.</p>
+
+<pre><code>$ locale
+LANG=
+LC_COLLATE="POSIX"
+LC_CTYPE="POSIX"
+LC_MESSAGES="POSIX"
+LC_MONETARY="POSIX"
+LC_NUMERIC="POSIX"
+LC_TIME="POSIX"
+LC_ALL="POSIX"
+$ export LANG=en_US.UTF-8
+$ export LC_ALL=$LANG
+$ locale
+LANG="en_US.UTF-8"
+LC_COLLATE="en_US.UTF-8"
+LC_CTYPE="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_MONETARY="en_US.UTF-8"
+LC_NUMERIC="en_US.UTF-8"
+LC_TIME="en_US.UTF-8"
+LC_ALL="en_US.UTF-8"
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Updating Octopress]]></title>
+    <link href="http://robbyp.com/blog/2013/10/20/updating-octopress/"/>
+    <updated>2013-10-20T22:21:00+01:00</updated>
+    <id>http://robbyp.com/blog/2013/10/20/updating-octopress</id>
+    <content type="html"><![CDATA[<p>A few notes on updating Octopress; as always an aide-mémoire.</p>
+
+<h3>Getting the blog onto Github</h3>
+
+<p>First things first, I finally got the blog tracked on Github.</p>
+
+<pre><code>$ git remote rename origin octopress
+$ git remote add origin git@github.com:robpurcell/robbyp.git
+$ git config branch.master.remote origin
+$ git push -u origin master
+</code></pre>
+
+<p>That lot gets the origin (which was still pointing to the Octopress repo from the original clone) renamed to <code>octopress</code> and then a new origin created for my Github repo, freshly created.  Finally the content was pushed.</p>
+
+<!-- more -->
+
+
+<h3>Update the Octopress bits</h3>
+
+<p>Now tracking both my Github repos and the Octopress one, I can merge in the more recent changes since I created the site.</p>
+
+<pre><code>$ git pull octopress master
+$ echo 1.9.3-p194 &gt; .rbenv-version # The update had deleted this for some reason...
+$ rbenv rehash
+$ bundle install
+$ rake update_source
+$ rake update_style
+</code></pre>
+
+<p>The final two update scripts didn&rsquo;t seem to do too much, but I ran for completeness.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[More on Octopress]]></title>

@@ -2,54 +2,62 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://robbyp.com/blog/2009/12/22/just-in-time-dot-dot-dot/</loc>
-        <lastmod>2013-07-24T18:40:47+01:00</lastmod>
+        <lastmod>2013-10-20T22:17:29+01:00</lastmod>
     </url>
     <url>
         <loc>http://robbyp.com/blog/2013/04/16/notes-for-a-prospective-web-developer/</loc>
-        <lastmod>2013-08-05T07:55:27+01:00</lastmod>
+        <lastmod>2013-10-20T22:17:29+01:00</lastmod>
     </url>
     <url>
         <loc>http://robbyp.com/blog/2013/07/21/a-new-blog/</loc>
-        <lastmod>2013-07-24T08:42:49+01:00</lastmod>
+        <lastmod>2013-10-20T22:17:29+01:00</lastmod>
     </url>
     <url>
         <loc>http://robbyp.com/blog/2013/07/23/playing-with-vertx/</loc>
-        <lastmod>2013-07-24T18:40:22+01:00</lastmod>
+        <lastmod>2013-10-20T22:17:29+01:00</lastmod>
     </url>
     <url>
         <loc>http://robbyp.com/blog/2013/07/24/more-on-octopress/</loc>
-        <lastmod>2013-07-24T18:40:16+01:00</lastmod>
+        <lastmod>2013-10-20T22:17:29+01:00</lastmod>
     </url>
     <url>
         <loc>http://robbyp.com/blog/2013/07/24/vert-dot-x-with-a-gradle-build/</loc>
-        <lastmod>2013-08-05T07:55:27+01:00</lastmod>
+        <lastmod>2013-10-20T22:17:29+01:00</lastmod>
     </url>
     <url>
         <loc>http://robbyp.com/blog/2013/08/04/ratpack-and-lazybones/</loc>
-        <lastmod>2013-08-16T07:43:36+01:00</lastmod>
+        <lastmod>2013-10-20T22:17:29+01:00</lastmod>
     </url>
     <url>
         <loc>http://robbyp.com/blog/2013/08/16/a-javascript-frontend/</loc>
-        <lastmod>2013-08-16T07:48:18+01:00</lastmod>
+        <lastmod>2013-10-20T22:17:29+01:00</lastmod>
     </url>
     <url>
         <loc>http://robbyp.com/blog/2013/08/16/angularjs/</loc>
-        <lastmod>2013-08-17T15:36:40+01:00</lastmod>
+        <lastmod>2013-10-20T22:17:29+01:00</lastmod>
     </url>
     <url>
         <loc>http://robbyp.com/blog/2013/08/24/a-note-about-git/</loc>
-        <lastmod>2013-08-24T13:36:53+01:00</lastmod>
+        <lastmod>2013-10-20T22:17:29+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://robbyp.com/blog/2013/10/20/updating-octopress/</loc>
+        <lastmod>2013-10-20T23:22:18+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://robbyp.com/blog/2013/10/20/a-quick-aside-on-locale/</loc>
+        <lastmod>2013-10-20T23:21:52+01:00</lastmod>
     </url>
     <url>
         <loc>http://robbyp.com/blog/archives/</loc>
-        <lastmod>2013-08-24T13:36:53+01:00</lastmod>
+        <lastmod>2013-10-20T23:22:18+01:00</lastmod>
     </url>
     <url>
         <loc>http://robbyp.com/</loc>
-        <lastmod>2013-08-24T13:36:53+01:00</lastmod>
+        <lastmod>2013-10-20T23:22:18+01:00</lastmod>
     </url>
     <url>
         <loc>http://robbyp.com/robots.txt</loc>
-        <lastmod>2013-07-19T07:27:37+01:00</lastmod>
+        <lastmod>2013-10-20T22:17:29+01:00</lastmod>
     </url>
 </urlset>

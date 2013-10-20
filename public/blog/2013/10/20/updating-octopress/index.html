@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Getting started with Vert.x - Against A Dark Background...</title>
+  <title>Updating Octopress - Against A Dark Background...</title>
   <meta name="author" content="Rob Purcell">
 
   
-  <meta name="description" content="Today, I&rsquo;m trying to see if I can figure out what Vert.x is. I&rsquo;m following the installation doc here. I intalled Vert.x with gvm: $ gvm &hellip;">
+  <meta name="description" content="A few notes on updating Octopress; as always an aide-mémoire. Getting the blog onto Github First things first, I finally got the blog tracked on &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://robbyp.com/blog/2013/07/23/playing-with-vertx">
+  <link rel="canonical" href="http://robbyp.com/blog/2013/10/20/updating-octopress">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Against A Dark Background..." type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Getting Started With Vert.x</h1>
+      <h1 class="entry-title">Updating Octopress</h1>
     
     
       <p class="meta">
@@ -84,50 +84,43 @@
   
 
 
-<time datetime="2013-07-23T07:16:00+01:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
+<time datetime="2013-10-20T22:21:00+01:00" pubdate data-updated="true">Oct 20<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Today, I&rsquo;m trying to see if I can figure out what Vert.x is.  I&rsquo;m following the installation doc <a href="http://vertx.io/install.html">here</a>.</p>
+<div class="entry-content"><p>A few notes on updating Octopress; as always an aide-mémoire.</p>
 
-<p>I intalled Vert.x with <a href="http://gvmtool.net/">gvm</a>:</p>
+<h3>Getting the blog onto Github</h3>
 
-<pre><code>$ gvm install vertx
-$ gvm current vertx
-Using vertx version 2.0.0-final
+<p>First things first, I finally got the blog tracked on Github.</p>
+
+<pre><code>$ git remote rename origin octopress
+$ git remote add origin git@github.com:robpurcell/robbyp.git
+$ git config branch.master.remote origin
+$ git push -u origin master
 </code></pre>
+
+<p>That lot gets the origin (which was still pointing to the Octopress repo from the original clone) renamed to <code>octopress</code> and then a new origin created for my Github repo, freshly created.  Finally the content was pushed.</p>
 
 <!-- more -->
 
 
-<p>I created the Hello World example:</p>
+<h3>Update the Octopress bits</h3>
 
-<pre><code>$ vi server.js
-$ vertx run server.js
-Downloading io.vertx~lang-rhino~2.0.0-final. Please wait...
-Downloading 100%
-Module io.vertx~lang-rhino~2.0.0-final successfully installed
+<p>Now tracking both my Github repos and the Octopress one, I can merge in the more recent changes since I created the site.</p>
+
+<pre><code>$ git pull octopress master
+$ echo 1.9.3-p194 &gt; .rbenv-version # The update had deleted this for some reason...
+$ rbenv rehash
+$ bundle install
+$ rake update_source
+$ rake update_style
 </code></pre>
 
-<p>Then I started following the <a href="http://vertx.io/manual.html">Main Manual</a></p>
-
-<p>Aside: running Vert.x on Heroku immediately jumped to mind: <a href="http://fbflex.wordpress.com/2012/05/02/running-vert-x-applications-on-heroku/">found this</a></p>
-
-<p>Developing an app using Gradle for build management seemed like the way <a href="http://vertx.io/gradle_dev.html">forward</a></p>
-
-<p>Clone template project locally:</p>
-
-<pre><code>$ git clone https://github.com/vert-x/vertx-gradle-template.git my-vertx-module
-$ git remote rm origin
-$ git remote add --track master origin git@github.com:robpurcell/verdant.git
-$ git pull
-$ git push origin master
-</code></pre>
-
-<p>As per the above, I created the repo on Github and then merged in the cloned template: <a href="http://caiustheory.com/adding-a-remote-to-existing-git-repo">see here</a> for some more details of the way to get remote tracking working properly.</p>
+<p>The final two update scripts didn&rsquo;t seem to do too much, but I ran for completeness.</p>
 </div>
 
 
@@ -150,12 +143,12 @@ $ git push origin master
   
 
 
-<time datetime="2013-07-23T07:16:00+01:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
+<time datetime="2013-10-20T22:21:00+01:00" pubdate data-updated="true">Oct 20<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/vertx/'>vertx</a>, <a class='category' href='/blog/categories/web/'>web</a>
+    <a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
   
 </span>
 
@@ -164,7 +157,7 @@ $ git push origin master
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://robbyp.com/blog/2013/07/23/playing-with-vertx/" data-via="" data-counturl="http://robbyp.com/blog/2013/07/23/playing-with-vertx/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://robbyp.com/blog/2013/10/20/updating-octopress/" data-via="" data-counturl="http://robbyp.com/blog/2013/10/20/updating-octopress/" >Tweet</a>
   
   
   
@@ -173,10 +166,10 @@ $ git push origin master
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/07/21/a-new-blog/" title="Previous Post: A new blog">&laquo; A new blog</a>
+        <a class="basic-alignment left" href="/blog/2013/08/24/a-note-about-git/" title="Previous Post: A Note About Git">&laquo; A Note About Git</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/07/24/more-on-octopress/" title="Next Post: More on Octopress">More on Octopress &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/10/20/a-quick-aside-on-locale/" title="Next Post: A quick aside on locale">A quick aside on locale &raquo;</a>
       
     </p>
   </footer>
@@ -272,8 +265,8 @@ $ git push origin master
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://robbyp.com/blog/2013/07/23/playing-with-vertx/';
-        var disqus_url = 'http://robbyp.com/blog/2013/07/23/playing-with-vertx/';
+        var disqus_identifier = 'http://robbyp.com/blog/2013/10/20/updating-octopress/';
+        var disqus_url = 'http://robbyp.com/blog/2013/10/20/updating-octopress/';
         var disqus_script = 'embed.js';
       
     (function () {

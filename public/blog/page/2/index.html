@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Getting started with Vert.x - Against A Dark Background...</title>
+  <title>Against A Dark Background...</title>
   <meta name="author" content="Rob Purcell">
 
   
-  <meta name="description" content="Today, I&rsquo;m trying to see if I can figure out what Vert.x is. I&rsquo;m following the installation doc here. I intalled Vert.x with gvm: $ gvm &hellip;">
+  <meta name="description" content="After a good while, my second blog posting, and the first of the new decade&hellip; Yes, at this rate my third will be in 2025! Some notes on what I& &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://robbyp.com/blog/2013/07/23/playing-with-vertx">
+  <link rel="canonical" href="http://robbyp.com/blog/page/2">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Against A Dark Background..." type="application/atom+xml">
@@ -63,12 +63,15 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">Getting Started With Vert.x</h1>
+      <h1 class="entry-title"><a href="/blog/2013/04/16/notes-for-a-prospective-web-developer/">Notes for a Prospective Web Developer</a></h1>
     
     
       <p class="meta">
@@ -84,112 +87,94 @@
   
 
 
-<time datetime="2013-07-23T07:16:00+01:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
+<time datetime="2013-04-16T19:44:00+01:00" pubdate data-updated="true">Apr 16<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Today, I&rsquo;m trying to see if I can figure out what Vert.x is.  I&rsquo;m following the installation doc <a href="http://vertx.io/install.html">here</a>.</p>
+  <div class="entry-content"><p>After a good while, my second blog posting, and the first of the new decade&hellip; Yes, at this rate my third will be in 2025!</p>
 
-<p>I intalled Vert.x with <a href="http://gvmtool.net/">gvm</a>:</p>
+<p>Some notes on what I&rsquo;m doing to get my my web application up and running.  Note, I&rsquo;m running this effort in tandem with another blog post on using Vert.x, with the hope that these efforts may come together at some stage&hellip; We shall see.</p>
 
-<pre><code>$ gvm install vertx
-$ gvm current vertx
-Using vertx version 2.0.0-final
-</code></pre>
+<h4>tl;dr I&rsquo;m going to try and get a Bootstrap site laid out using Grunt and Compass.</h4>
 
-<!-- more -->
+<h3>Install Grunt</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>npm install -g grunt-cli
+</span><span class='line'>npm install -g grunt-init</span></code></pre></td></tr></table></div></figure>
 
 
-<p>I created the Hello World example:</p>
+<p>Get the gruntfile template, create Gruntfile.js and package.json</p>
 
-<pre><code>$ vi server.js
-$ vertx run server.js
-Downloading io.vertx~lang-rhino~2.0.0-final. Please wait...
-Downloading 100%
-Module io.vertx~lang-rhino~2.0.0-final successfully installed
-</code></pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:gruntjs/grunt-init-gruntfile.git ~/.grunt-init/gruntfile
+</span><span class='line'>grunt-init gruntfile
+</span><span class='line'>npm init </span></code></pre></td></tr></table></div></figure>
 
-<p>Then I started following the <a href="http://vertx.io/manual.html">Main Manual</a></p>
 
-<p>Aside: running Vert.x on Heroku immediately jumped to mind: <a href="http://fbflex.wordpress.com/2012/05/02/running-vert-x-applications-on-heroku/">found this</a></p>
-
-<p>Developing an app using Gradle for build management seemed like the way <a href="http://vertx.io/gradle_dev.html">forward</a></p>
-
-<p>Clone template project locally:</p>
-
-<pre><code>$ git clone https://github.com/vert-x/vertx-gradle-template.git my-vertx-module
-$ git remote rm origin
-$ git remote add --track master origin git@github.com:robpurcell/verdant.git
-$ git pull
-$ git push origin master
-</code></pre>
-
-<p>As per the above, I created the repo on Github and then merged in the cloned template: <a href="http://caiustheory.com/adding-a-remote-to-existing-git-repo">see here</a> for some more details of the way to get remote tracking working properly.</p>
 </div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/04/16/notes-for-a-prospective-web-developer/">Read on &rarr;</a>
+    </footer>
+  
 
 
-  <footer>
-    <p class="meta">
+    </article>
+  
+  
+    <article>
       
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Rob Purcell</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-23T07:16:00+01:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/vertx/'>vertx</a>, <a class='category' href='/blog/categories/web/'>web</a>
-  
-</span>
-
-
-    </p>
+  <header>
     
-      <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://robbyp.com/blog/2013/07/23/playing-with-vertx/" data-via="" data-counturl="http://robbyp.com/blog/2013/07/23/playing-with-vertx/" >Tweet</a>
-  
-  
-  
-</div>
-
+      <h1 class="entry-title"><a href="/blog/2009/12/22/just-in-time-dot-dot-dot/">Just in Time&#8230;</a></h1>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2013/07/21/a-new-blog/" title="Previous Post: A new blog">&laquo; A new blog</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2013/07/24/more-on-octopress/" title="Next Post: More on Octopress">More on Octopress &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
+    
+      <p class="meta">
+        
 
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-22T20:32:00+00:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ve left it nearly to the last minute, but I can now say that I wrote a blog in the Noughties.  I can&rsquo;t promise that it will be Earth shattering, but the Earth needs all the help it can get these days.</p>
+
+<p>I also think it&rsquo;s unlikely that this will be remotely amusing (see previous quip) but hopefully it will be informative.  If nothing else, it&rsquo;s going to be a spot for me to keep track of a bunch of random thoughts, maybe ideas and certainly links to interesting stuff.</p>
 </div>
-  </section>
+  
+  
 
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/">Newer &rarr;</a>
+    
+  </div>
 </div>
-
 <aside class="sidebar">
   
     <section>
@@ -222,7 +207,7 @@ $ git push origin master
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
+    <li class="loading">Status updating&#8230;</li>
   </ul>
   
   <a href="https://github.com/robpurcell">@robpurcell</a> on GitHub
@@ -256,7 +241,6 @@ $ git push origin master
   
 </aside>
 
-
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -271,10 +255,7 @@ $ git push origin master
       var disqus_shortname = 'robswiki';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://robbyp.com/blog/2013/07/23/playing-with-vertx/';
-        var disqus_url = 'http://robbyp.com/blog/2013/07/23/playing-with-vertx/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
